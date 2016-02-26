@@ -8,18 +8,21 @@
     "review": [{
       "title": "Clean room",
       "imageURL": "http://wearebothright.com/wp-content/uploads/2011/03/rsz_clean_bedroom.jpg",
+      "points": 2,
       "user": {
         "name": "Jimmy"
       }
     }, {
       "title": "Set the table",
       "imageURL": "http://www.sohowsittaste.com/wp-content/uploads/2011/05/SpringDinnerTable.jpg",
+      "points": 1,
       "user": {
         "name": "Jimmy"
       }
     }, {
       "title": "Study for math test",
       "imageURL": "https://cleridae.files.wordpress.com/2012/04/dscf1870.jpg",
+      "points": 3,
       "user": {
         "name": "Madison"
       }
