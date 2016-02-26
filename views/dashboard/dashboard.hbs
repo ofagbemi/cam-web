@@ -18,6 +18,9 @@
 
   <div id="active-goals">
     <h1>Active Goals</h1>
+    <div class="empty-tag">
+      <p>No active goals.</p>
+    </div>
     <div class="row">
       {{#each goals.active}}
       {{> goal-card/goal-card type='active'}}
