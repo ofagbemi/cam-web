@@ -1,0 +1,7 @@
+[data-component="create"] {
+  > .form {
+    &.hide {
+      display: none;
+    }
+  }
+}

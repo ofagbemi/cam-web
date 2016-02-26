@@ -1,0 +1,24 @@
+[data-component="activity-chart"] {
+
+  .legend {
+    .user {
+      display: flex;
+      margin-top: 4px;
+      padding: 4px;
+      align-items: center;
+      cursor: pointer;
+
+      &:hover, &.active {
+        background: rgba(0, 0, 0, 0.04);
+      }
+
+      .color {
+        margin-right: 11px;
+        width: 18px;
+        height: 18px;
+        border-radius: 28px;
+        display: inline-block;
+      }
+    }
+  }
+}

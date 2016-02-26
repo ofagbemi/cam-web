@@ -1,0 +1,21 @@
+#dashboard {
+
+  #unfinished-goals {
+    > .empty-tag {
+      display: none;
+    }
+
+    &.empty {
+      > .empty-tag {
+        display: block;
+      }
+    }
+
+    > .row {
+      display: flex;
+      > [data-component="goal"]:not(:first-child) {
+        margin-left: 11px;
+      }
+    }
+  }
+}

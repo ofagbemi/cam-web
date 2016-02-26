@@ -1,0 +1,13 @@
+// Components
+@import '../components/goal/goal';
+@import '../components/create/create';
+@import '../components/activity-chart/activity-chart';
+
+// Views
+@import 'dashboard/dashboard';
+
+body {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
