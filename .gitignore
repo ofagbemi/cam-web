@@ -1,2 +1,4 @@
 node_modules/
+res/
+*.log
 *.DS_Store

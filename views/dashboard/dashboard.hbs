@@ -4,14 +4,23 @@
     {{> create/create users=users}}
   </div>
 
-  <div id="unfinished-goals">
+  <div id="review-goals">
     <h1>Waiting For Review</h1>
     <div class="empty-tag">
       <p>Nothing left to review.</p>
     </div>
     <div class="row">
-      {{#each goals}}
-      {{> goal/goal}}
+      {{#each goals.review}}
+      {{> goal-card/goal-card type='review'}}
+      {{/each}}
+    </div>
+  </div>
+
+  <div id="active-goals">
+    <h1>Active Goals</h1>
+    <div class="row">
+      {{#each goals.active}}
+      {{> goal-card/goal-card type='active'}}
       {{/each}}
     </div>
   </div>
