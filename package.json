@@ -10,9 +10,7 @@
     "express-handlebars": "^3.0.0",
     "inherits": "^2.0.1",
     "jquery": "^2.2.1",
-    "underscore": "^1.8.3"
-  },
-  "devDependencies": {
+    "underscore": "^1.8.3",
     "autoprefixer": "^6.3.3",
     "browserify": "^13.0.0",
     "node-sass": "^3.4.2",
