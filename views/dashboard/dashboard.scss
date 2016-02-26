@@ -1,6 +1,6 @@
 #dashboard {
 
-  #unfinished-goals {
+  #review-goals, #active-goals {
     > .empty-tag {
       display: none;
     }
@@ -13,7 +13,7 @@
 
     > .row {
       display: flex;
-      > [data-component="goal"]:not(:first-child) {
+      > [data-component="goal-card"]:not(:first-child) {
         margin-left: 11px;
       }
     }
