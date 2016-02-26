@@ -9,7 +9,7 @@ Dashboard.prototype.init = function() {
 
   // set up goals pending review
   this.$reviewGoalsContainer = this.$el.find('#review-goals');
-  this.$reviewGoals = this.$reviewGoalsContainer.find('[data-component="goal"]');
+  this.$reviewGoals = this.$reviewGoalsContainer.find('[data-component="goal-card"]');
   this.reviewGoalComponents = [];
   this.$reviewGoals.each(_.bind(function(i, el) {
     var goal = ComponentFactory.getComponent(el);
