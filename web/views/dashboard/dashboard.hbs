@@ -1,0 +1,23 @@
+<div id="dashboard" data-component="dashboard">
+
+  <div id="create">
+    {{> create/create users=users}}
+  </div>
+
+  <div id="unfinished-goals">
+    <h1>Waiting For Review</h1>
+    <div class="empty-tag">
+      <p>Nothing left to review.</p>
+    </div>
+    <div class="row">
+      {{#each goals}}
+      {{> goal/goal}}
+      {{/each}}
+    </div>
+  </div>
+
+  <div id="activity">
+    <h1>Activity</h1>
+    {{> activity-chart/activity-chart data=activity}}
+  </div>
+</div>

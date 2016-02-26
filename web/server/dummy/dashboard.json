@@ -1,0 +1,32 @@
+{
+  "users": [{
+    "name": "Jimmy"
+  }, {
+    "name": "Madison"
+  }],
+  "goals": [{
+    "title": "Clean Room",
+    "user": {
+      "name": "Jimmy"
+    }
+  }, {
+    "title": "Set Table",
+    "user": {
+      "name": "Jimmy"
+    }
+  }, {
+    "title": "Study for Math Test",
+    "user": {
+      "name": "Madison"
+    }
+  }],
+  "activity": [{
+    "name": "Madison",
+    "color": "#60c5ea",
+    "points": [18, 11, 14, 12, 18, 15]
+  }, {
+    "name": "Jimmy",
+    "color": "#e26a6a",
+    "points": [16, 14, 9, 18, 12, 12]
+  }]
+}

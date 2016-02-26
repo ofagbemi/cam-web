@@ -1,0 +1,9 @@
+[data-component="goal"] {
+  width: 200px;
+  border: solid 1px black;
+  text-align: center;
+
+  &.hide {
+    display: none;
+  }
+}
