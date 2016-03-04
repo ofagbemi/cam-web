@@ -1,5 +1,10 @@
+// Variables
+@import 'variables';
+
 // Components
 @import '../components/user-badge/user-badge';
+@import '../components/button-group/button-group';
+
 @import '../components/create/create';
 @import '../components/goal-card/goal-card';
 @import '../components/activity-chart/activity-chart';
@@ -22,4 +27,9 @@ body {
   padding: 20px 0;
   display: flex;
   justify-content: center;
+  font-family: 'Lato', sans-serif;
+}
+
+button {
+  font-family: inherit;
 }
