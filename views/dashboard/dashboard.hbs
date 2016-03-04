@@ -1,5 +1,12 @@
 <div id="dashboard" data-component="dashboard">
 
+  <div id="family-badges">
+    {{#each users}}
+      {{> user-badge/user-badge}}
+    {{/each}}
+  </div>
+
+
   <div id="create">
     {{> create/create users=users}}
   </div>

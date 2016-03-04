@@ -1,5 +1,15 @@
 #dashboard {
 
+  #family-badges {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > [data-component="user-badge"] {
+      margin: 0 15px;
+    }
+  }
+
   #review-goals, #active-goals {
     > .empty-tag {
       display: none;

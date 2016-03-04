@@ -1,8 +1,21 @@
 {
   "users": [{
-    "name": "Jimmy"
+    "name": "Madelyn",
+    "color": "#fbc02d",
+    "imageUrl": "/images/demo/profile-photos/madelyn.png"
+
   }, {
-    "name": "Madison"
+    "name": "Mom",
+    "color": "#9013fe",
+    "imageUrl": "/images/demo/profile-photos/mom.png"
+  }, {
+    "name": "Bryson",
+    "color": "#00bcd4",
+    "imageUrl": "/images/demo/profile-photos/bryson.png"
+  }, {
+    "name": "Dad",
+    "color": "#4A90E2",
+    "imageUrl": "/images/demo/profile-photos/dad.png"
   }],
   "goals": {
     "review": [{
