@@ -7,6 +7,10 @@
 // Views
 @import 'dashboard/dashboard';
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 20px 0;
   display: flex;
