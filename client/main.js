@@ -8,3 +8,6 @@ factory.registerComponent('progress-bar', require('../components/progress-bar/pr
 //factory.registerComponent('activity-chart', require('../components/activity-chart/activity-chart'));
 
 factory.hydrate(document.documentElement);
+
+
+window.jQuery = require('jquery');

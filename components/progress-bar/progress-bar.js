@@ -23,11 +23,30 @@ ProgressBar.prototype.init = function() {
     numCheckpoints += (checkpoint.timesCompleted + checkpoint.timesRemaining);
   });
 
-  _.each(userTotals, _.bind(function(value, key) {
-    this.$track.append($('<div>').addClass('inner').css({
-      width: (value * 100 / numCheckpoints) + '%',
-      backgroundColor: ServerData.getFamilyMemberWithId(key).color
-    }));
+  var bars = [];
+  _.each(userTotals, function(value, key) {
+    var familyMember = ServerData.getFamilyMemberWithId(key);
+    var $barEl = $('<div>').addClass('inner')
+      .css({
+        width: (value * 100 / numCheckpoints) + '%',
+        backgroundColor: familyMember.color
+      }).attr({
+        "data-toggle": "tooltip",
+        "data-placement": "bottom",
+        "data-title": familyMember.name
+      });
+    bars.push($barEl)
+  });
+
+  // iterate through array of elements so that we can use the index
+  // to set the first and last classes
+  _.each(bars, _.bind(function($b, index) {
+    this.$track.append($b);
+    if (index === 0) { $b.addClass('first'); }
+    if (index === bars.length - 1) { $b.addClass('last'); }
+    $(document).ready(function() {
+      $b.tooltip();
+    });
   }, this));
 
 };

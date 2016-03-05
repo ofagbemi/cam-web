@@ -11,15 +11,15 @@
     > .inner {
       height: 16px;
 
-      &:first-child {
+      &.first {
         border-radius: 11px 0 0 11px;
       }
 
-      &:last-child {
+      &.last {
         border-radius: 0 11px 11px 0;
       }
 
-      &:first-child:last-child {
+      &.first.last {
         border-radius: 11px;
       }
     }
