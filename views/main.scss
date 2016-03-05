@@ -2,11 +2,14 @@
 @import 'variables';
 
 // Components
+@import '../components/badge/badge';
 @import '../components/user-badge/user-badge';
 @import '../components/checkpoint-badge/checkpoint-badge';
 @import '../components/button-group/button-group';
 @import '../components/mission-card/mission-card';
+@import '../components/create-mission-card/create-mission-card';
 @import '../components/progress-bar/progress-bar';
+@import '../components/text-box/text-box';
 
 @import '../components/create/create';
 

@@ -1,0 +1,26 @@
+[data-component="text-box"] {
+  > input[type="text"] {
+    border: none;
+    outline: none;
+    padding: none;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+
+    &:focus + .border > .focused-border {
+      width: 100%;
+    }
+  }
+
+  > .border {
+    width: 100%;
+    background-color: $border-color;
+    height: 1px;
+
+    > .focused-border {
+      width: 0%;
+      height: 100%;
+      background-color: $action-color;
+    }
+  }
+}

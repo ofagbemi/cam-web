@@ -12,22 +12,10 @@
     <button>Completed Missions</button>
   </div>
 
+  {{> create-mission-card/create-mission-card}}
   <div id="active-goals">
-
     {{#each missions}}
       {{> mission-card/mission-card}}
     {{/each}}
-  </div>
-
-  <div id="active-goals">
-    <h1>Active Goals</h1>
-    <div class="empty-tag">
-      <p>No active goals.</p>
-    </div>
-    <div class="row">
-      {{#each goals.active}}
-      {{> mission-card/mission-card type='active'}}
-      {{/each}}
-    </div>
   </div>
 </div>

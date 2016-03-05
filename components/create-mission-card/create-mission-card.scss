@@ -1,0 +1,47 @@
+[data-component="create-mission-card"] {
+  cursor: pointer;
+  padding: 30px 65px;
+  display: flex;
+
+  background-color: white;
+  box-shadow: 0 2px 4px 0 $shadow-color;
+  border-radius: 11px;
+
+  > .header {
+    display: flex;
+    align-items: center;
+    height: 128px;
+
+    > [data-component="text-box"] {
+      font-size: 24px;
+
+      > input[type="text"] {
+        padding: 11px 0;
+        cursor: pointer;
+      }
+
+      > .border {
+        background-color: transparent;
+        height: 2px;
+      }
+    }
+  }
+
+  &.active {
+    cursor: initial;
+
+    > .header {
+
+      > [data-component="text-box"] {
+
+        > input[type="text"] {
+          cursor: initial;
+        }
+
+        > .border {
+          background-color: $border-color;
+        }
+      }
+    }
+  }
+}
