@@ -1,1 +1,4 @@
-<div data-component="checkpoint-badge" style="background-image:url('{{ imageUrl }}');"></div>
+<div data-component="checkpoint-badge" style="
+     {{~#if imageUrl~}}
+      background-image:url('{{ imageUrl }}');
+     {{~/if}}"></div>

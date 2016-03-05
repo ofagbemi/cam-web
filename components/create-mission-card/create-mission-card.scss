@@ -1,7 +1,6 @@
 [data-component="create-mission-card"] {
   cursor: pointer;
   padding: 30px 65px;
-  display: flex;
 
   background-color: white;
   box-shadow: 0 2px 4px 0 $shadow-color;
@@ -12,7 +11,13 @@
     align-items: center;
     height: 128px;
 
+    > [data-component="badge"] {
+      margin-right: 48px;
+      flex: 0 0 auto;
+    }
+
     > [data-component="text-box"] {
+      width: 100%;
       font-size: 24px;
 
       > input[type="text"] {
@@ -22,7 +27,33 @@
 
       > .border {
         background-color: transparent;
-        height: 2px;
+      }
+    }
+  }
+
+  > .details {
+    display: none;
+
+    > .row {
+
+      margin: 24px 0;
+
+      > label {
+        display: flex;
+        align-items: center;
+
+        > span {
+          width: 128px; // same width as badge
+          margin-right: 48px;
+          text-align: right;
+          flex: 0 0 auto;
+          font-size: 14px;
+          font-weight: 400;
+        }
+
+        > .family-select [data-component="user-badge"] {
+          margin: 0 11px;
+        }
       }
     }
   }
@@ -42,6 +73,10 @@
           background-color: $border-color;
         }
       }
+    }
+
+    > .details {
+      display: initial;
     }
   }
 }

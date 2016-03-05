@@ -1,6 +1,25 @@
 <div data-component="create-mission-card">
-  {{> badge/badge}}
   <div class="header">
+    {{> badge/badge}}
     {{> text-box/text-box class="title" placeholder="Add a new mission"}}
+  </div>
+  <div class="details">
+    <div class="row">
+      <label>
+        <span>Assigned to</span>
+        <div class="family-select">
+        {{#each users}}
+          {{> user-badge/user-badge}}
+        {{/each}}
+        </div>
+      </label>
+    </div>
+
+    <div class="row">
+      <label>
+        <span>Milestones</span>
+        {{> add-milestones/add-milestones}}
+      </label>
+    </div>
   </div>
 </div>

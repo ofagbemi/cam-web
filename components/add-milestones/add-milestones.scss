@@ -1,0 +1,33 @@
+[data-component="add-milestones"] {
+
+  > .row {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+
+    > [data-component="text-box"] {
+      margin-left: 18px;
+
+      > input[type="text"] {
+        padding-bottom: 4px;
+      }
+    }
+
+    &.add-milestone {
+      > [data-component="checkpoint-badge"] {
+        background-color: white;
+        background-image: url('/images/icons/inset-plus/inset-plus.svg');
+      }
+
+      [data-component="text-box"] {
+        > input[type="text-box"] {
+          cursor: pointer;
+        }
+
+        > .border {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
