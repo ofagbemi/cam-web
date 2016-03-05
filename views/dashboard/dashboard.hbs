@@ -12,21 +12,11 @@
     <button>Completed Missions</button>
   </div>
 
+  <div id="active-goals">
 
-  <div id="create">
-    {{> create/create users=users}}
-  </div>
-
-  <div id="review-goals">
-    <h1>Waiting For Review</h1>
-    <div class="empty-tag">
-      <p>Nothing left to review.</p>
-    </div>
-    <div class="row">
-      {{#each goals.review}}
-      {{> goal-card/goal-card type='review'}}
-      {{/each}}
-    </div>
+    {{#each goals}}
+      {{> goal-card/goal-card}}
+    {{/each}}
   </div>
 
   <div id="active-goals">

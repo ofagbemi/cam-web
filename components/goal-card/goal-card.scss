@@ -1,17 +1,45 @@
 [data-component="goal-card"] {
-  width: 200px;
-  border: solid 1px black;
-  text-align: center;
+  padding: 30px 65px;
+  display: flex;
 
-  &.hide {
-    display: none;
+  background-color: white;
+  box-shadow: 0 2px 4px 0 $shadow-color;
+  border-radius: 11px;
+
+  .badge {
+    flex: 0 0 auto;
+    width: 128px;
+    height: 128px;
+    margin-right: 48px;
+    border-radius: 128px;
+    box-shadow: 0 3px 4px 0 $shadow-color;
   }
 
-  > .goal-img {
-    width: 200px;
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  .info {
+    flex: 1 0 auto;
+
+    > .header {
+      display: flex;
+      align-items: baseline;
+
+      > .title {
+        font-size: 24px;
+      }
+
+      > .checkpoints-label {
+        margin-left: auto;
+        padding-left: 11px;
+        font-size: 14px;
+        color: $caption-color;
+      }
+    }
+
+    > .checkpoints {
+      display: flex;
+
+      [data-component="checkpoint-badge"]:first-child {
+        margin-left: auto;
+      }
+    }
   }
 }

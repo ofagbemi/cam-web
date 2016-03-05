@@ -17,40 +17,11 @@
     "color": "#4A90E2",
     "imageUrl": "/images/demo/profile-photos/dad.png"
   }],
-  "goals": {
-    "review": [{
-      "title": "Clean room",
-      "imageURL": "http://wearebothright.com/wp-content/uploads/2011/03/rsz_clean_bedroom.jpg",
-      "points": 2,
-      "user": {
-        "name": "Jimmy"
-      }
-    }, {
-      "title": "Set the table",
-      "imageURL": "http://www.sohowsittaste.com/wp-content/uploads/2011/05/SpringDinnerTable.jpg",
-      "points": 1,
-      "user": {
-        "name": "Jimmy"
-      }
-    }, {
-      "title": "Study for math test",
-      "imageURL": "https://cleridae.files.wordpress.com/2012/04/dscf1870.jpg",
-      "points": 3,
-      "user": {
-        "name": "Madison"
-      }
-    }],
-    "active": [{
-      "title": "Set the table",
-      "points": 1
-    }, {
-      "title": "Put away toys",
-      "points": 1
-    }, {
-      "title": "Help cook dinner",
-      "points": 4
-    }]
-  },
+  "goals": [{
+    "title": "Learn to make a pasta dinner",
+    "numCompletedCheckpoints": 1,
+    "numCheckpoints": 5
+  }],
   "activity": [{
     "name": "Madison",
     "color": "#60c5ea",
