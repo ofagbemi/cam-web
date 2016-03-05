@@ -1,13 +1,15 @@
-<div data-component="goal-card">
+<div data-component="mission-card">
   <div class="badge"></div>
   <div class="info">
     <div class="header">
       <h1 class="title">{{ title }}</h1>
       <span class="checkpoints-label"> {{numCompletedCheckpoints}}/{{numCheckpoints}} checkpoints completed</span>
     </div>
-    {{> progress-bar/progress-bar}}
+    {{> progress-bar/progress-bar this}}
     <div class="checkpoints">
+      {{#each checkpoints}}
       {{> checkpoint-badge/checkpoint-badge}}
+      {{/each}}
     </div>
   </div>
 </div>

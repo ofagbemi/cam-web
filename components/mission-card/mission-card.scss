@@ -1,4 +1,4 @@
-[data-component="goal-card"] {
+[data-component="mission-card"] {
   padding: 30px 65px;
   display: flex;
 
@@ -39,6 +39,10 @@
 
       [data-component="checkpoint-badge"]:first-child {
         margin-left: auto;
+      }
+
+      [data-component="checkpoint-badge"]:not(:first-child) {
+        margin-left: 12px;
       }
     }
   }

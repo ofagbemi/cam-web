@@ -14,8 +14,8 @@
 
   <div id="active-goals">
 
-    {{#each goals}}
-      {{> goal-card/goal-card}}
+    {{#each missions}}
+      {{> mission-card/mission-card}}
     {{/each}}
   </div>
 
@@ -26,13 +26,8 @@
     </div>
     <div class="row">
       {{#each goals.active}}
-      {{> goal-card/goal-card type='active'}}
+      {{> mission-card/mission-card type='active'}}
       {{/each}}
     </div>
-  </div>
-
-  <div id="activity">
-    <h1>Activity</h1>
-    {{> activity-chart/activity-chart data=activity}}
   </div>
 </div>

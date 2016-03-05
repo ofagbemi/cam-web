@@ -1,34 +1,38 @@
 {
   "users": [{
+    "id": 0,
     "name": "Madelyn",
     "color": "#fbc02d",
     "imageUrl": "/images/demo/profile-photos/madelyn.png"
 
   }, {
+    "id": 1,
     "name": "Mom",
     "color": "#9013fe",
     "imageUrl": "/images/demo/profile-photos/mom.png"
   }, {
+    "id": 2,
     "name": "Bryson",
     "color": "#00bcd4",
     "imageUrl": "/images/demo/profile-photos/bryson.png"
   }, {
+    "id": 3,
     "name": "Dad",
     "color": "#4A90E2",
     "imageUrl": "/images/demo/profile-photos/dad.png"
   }],
-  "goals": [{
-    "title": "Learn to make a pasta dinner",
-    "numCompletedCheckpoints": 1,
-    "numCheckpoints": 5
-  }],
-  "activity": [{
-    "name": "Madison",
-    "color": "#60c5ea",
-    "points": [18, 11, 14, 12, 18, 15]
-  }, {
-    "name": "Jimmy",
-    "color": "#e26a6a",
-    "points": [16, 14, 9, 18, 12, 12]
+  "missions": [{
+    "title": "Get a dog",
+    "checkpoints": [{
+      "name": "Choose a dog breed",
+      "timesCompleted": 1,
+      "timesRemaining": 0,
+      "userIds": [0]
+    }, {
+      "name": "Walk Mr. Jackson's dog",
+      "timesCompleted": 1,
+      "timesRemaining": 2,
+      "userIds": [0]
+    }]
   }]
 }

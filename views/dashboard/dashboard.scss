@@ -14,23 +14,4 @@
   > [data-component="button-group"] {
     margin: 0 0 40px 0;
   }
-
-  #review-goals, #active-goals {
-    > .empty-tag {
-      display: none;
-    }
-
-    &.empty {
-      > .empty-tag {
-        display: block;
-      }
-    }
-
-    > .row {
-      display: flex;
-      > [data-component="goal-card"]:not(:first-child) {
-        margin-left: 11px;
-      }
-    }
-  }
 }
