@@ -23,6 +23,7 @@
   }],
   "missions": [{
     "title": "Get a dog",
+    "numCheckpointsCompleted": 1,
     "checkpoints": [{
       "name": "Choose a dog breed",
       "timesCompleted": 1,
