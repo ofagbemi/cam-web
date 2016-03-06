@@ -1,21 +1,21 @@
 #dashboard {
 
-  #review-goals, #active-goals {
-    > .empty-tag {
-      display: none;
-    }
+  [data-component="mission-card"], [data-component="create-mission-card"] {
+    margin-bottom: 24px;
+  }
 
-    &.empty {
-      > .empty-tag {
-        display: block;
-      }
-    }
+  #family-badges {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0 30px 0;
 
-    > .row {
-      display: flex;
-      > [data-component="goal-card"]:not(:first-child) {
-        margin-left: 11px;
-      }
+    > [data-component="user-badge"] {
+      margin: 0 15px;
     }
+  }
+
+  > [data-component="button-group"] {
+    margin: 0 0 40px 0;
   }
 }

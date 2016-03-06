@@ -1,0 +1,45 @@
+[data-component="mission-card"] {
+  padding: 30px 65px;
+  display: flex;
+
+  background-color: white;
+  box-shadow: 0 2px 4px 0 $shadow-color;
+  border-radius: 11px;
+
+  [data-component="badge"] {
+    margin-right: 48px;
+    flex: 0 0 auto;
+  }
+
+  > .info {
+    flex: 1 0 auto;
+
+    > .header {
+      display: flex;
+      align-items: baseline;
+
+      > .title {
+        font-size: 24px;
+      }
+
+      > .checkpoints-label {
+        margin-left: auto;
+        padding-left: 11px;
+        font-size: 14px;
+        color: $caption-color;
+      }
+    }
+
+    > .checkpoints {
+      display: flex;
+
+      [data-component="milestone-badge"]:first-child {
+        margin-left: auto;
+      }
+
+      [data-component="milestone-badge"]:not(:first-child) {
+        margin-left: 12px;
+      }
+    }
+  }
+}

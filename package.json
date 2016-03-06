@@ -5,15 +5,16 @@
     "prestart": "node bin/build-css.js;node bin/build-js.js"
   },
   "dependencies": {
+    "autoprefixer": "^6.3.3",
+    "browserify": "^13.0.0",
     "chart.js": "^1.0.2",
     "express": "^4.13.4",
     "express-handlebars": "^3.0.0",
+    "hbsfy": "^2.5.1",
     "inherits": "^2.0.1",
     "jquery": "^2.2.1",
-    "underscore": "^1.8.3",
-    "autoprefixer": "^6.3.3",
-    "browserify": "^13.0.0",
     "node-sass": "^3.4.2",
-    "postcss": "^5.0.16"
+    "postcss": "^5.0.16",
+    "underscore": "^1.8.3"
   }
 }

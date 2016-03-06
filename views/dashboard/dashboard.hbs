@@ -1,35 +1,21 @@
 <div id="dashboard" data-component="dashboard">
 
-  <div id="create">
-    {{> create/create users=users}}
+  <div id="family-badges">
+    {{#each users}}
+      {{> user-badge/user-badge}}
+    {{/each}}
   </div>
 
-  <div id="review-goals">
-    <h1>Waiting For Review</h1>
-    <div class="empty-tag">
-      <p>Nothing left to review.</p>
-    </div>
-    <div class="row">
-      {{#each goals.review}}
-      {{> goal-card/goal-card type='review'}}
-      {{/each}}
-    </div>
+
+  <div data-component="button-group">
+    <button class="active">Active Missions</button>
+    <button>Completed Missions</button>
   </div>
 
+  {{> create-mission-card/create-mission-card}}
   <div id="active-goals">
-    <h1>Active Goals</h1>
-    <div class="empty-tag">
-      <p>No active goals.</p>
-    </div>
-    <div class="row">
-      {{#each goals.active}}
-      {{> goal-card/goal-card type='active'}}
-      {{/each}}
-    </div>
-  </div>
-
-  <div id="activity">
-    <h1>Activity</h1>
-    {{> activity-chart/activity-chart data=activity}}
+    {{#each missions}}
+      {{> mission-card/mission-card}}
+    {{/each}}
   </div>
 </div>

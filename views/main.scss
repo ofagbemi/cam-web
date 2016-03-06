@@ -1,13 +1,66 @@
+// Variables
+@import 'variables';
+
 // Components
+@import '../components/badge/badge';
+@import '../components/user-badge/user-badge';
+@import '../components/milestone-badge/milestone-badge';
+@import '../components/button-group/button-group';
+@import '../components/mission-card/mission-card';
+@import '../components/create-mission-card/create-mission-card';
+@import '../components/progress-bar/progress-bar';
+@import '../components/text-box/text-box';
+@import '../components/add-milestones/add-milestones';
+@import '../components/add-milestones/add-milestones-row';
+@import '../components/checkmark/checkmark';
+@import '../components/close/close';
+@import '../components/nav/nav';
+
 @import '../components/create/create';
-@import '../components/goal-card/goal-card';
-@import '../components/activity-chart/activity-chart';
 
 // Views
 @import 'dashboard/dashboard';
 
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  font-weight: 400;
+}
+
+span {
+  font-weight: 300;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
 body {
-  margin: 20px 0;
+  margin-top: $nav-height;
+  background-color: #f8f8f8;
+  padding: 20px 0;
   display: flex;
   justify-content: center;
+  font-family: 'Lato', sans-serif;
+}
+
+#container {
+  width: 800px;
+}
+
+button {
+  font-family: inherit;
+}
+
+.tooltip {
+  transform: scale(1) translate(0, 0);
+  transition: transform $out-bounce-bezier 0.2s;
+  &.in {
+    transform: scale(1.15);
+  }
 }

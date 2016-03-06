@@ -1,0 +1,15 @@
+<div data-component="mission-card">
+  {{> badge/badge}}
+  <div class="info">
+    <div class="header">
+      <h1 class="title">{{ title }}</h1>
+      <span class="checkpoints-label"> {{numCheckpointsCompleted}}/{{checkpoints.length}} checkpoints completed</span>
+    </div>
+    {{> progress-bar/progress-bar this}}
+    <div class="checkpoints">
+      {{#each checkpoints}}
+      {{> milestone-badge/milestone-badge}}
+      {{/each}}
+    </div>
+  </div>
+</div>

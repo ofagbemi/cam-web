@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href='https://fonts.googleapis.com/css?family=Lato:100,200,300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/main.css">
   </head>
   <body>
-    {{{ body }}}
-
+    <div id="container">
+      {{{ body }}}
+    </div>
+    {{> nav/nav}}
+    <script type="application/json" id="server-data">
+    {
+      "familyMembers": {{{json users}}}
+    }
+    </script>
     <script type="text/javascript" src="/js/main.js"></script>
+    <script src="/js/bootstrap.js"></script>
   </body>
 </html>
