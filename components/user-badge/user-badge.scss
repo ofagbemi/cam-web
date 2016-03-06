@@ -9,4 +9,29 @@
   background-repeat: no-repeat;
 
   display: inline-block;
+  position: relative;
+
+
+  &[data-selectable] {
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 0.2s ease-out;
+
+    &:not(.selected) {
+      opacity: 0.8;
+    }
+
+    [data-component="checkmark"] {
+      display: initial;
+    }
+  }
+
+  [data-component="checkmark"] {
+    display: none;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    bottom: -7px;
+    right: -10px;
+  }
 }

@@ -8,7 +8,8 @@
       <span>Assigned to</span>
       <div class="family-select">
       {{#each users}}
-        {{> user-badge/user-badge}}
+        {{!-- Start off preselected --}}
+        {{> user-badge/user-badge selectable=true selected=true}}
       {{/each}}
       </div>
     </div>
