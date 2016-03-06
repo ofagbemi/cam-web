@@ -14,6 +14,7 @@
 @import '../components/add-milestones/add-milestones-row';
 @import '../components/checkmark/checkmark';
 @import '../components/close/close';
+@import '../components/nav/nav';
 
 @import '../components/create/create';
 
@@ -40,6 +41,7 @@ html, body {
 }
 
 body {
+  margin-top: $nav-height;
   background-color: #f8f8f8;
   padding: 20px 0;
   display: flex;
