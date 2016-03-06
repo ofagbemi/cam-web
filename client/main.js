@@ -6,7 +6,7 @@ TemplateRenderer.registerTemplate('milestone-badge/milestone-badge', require('..
 TemplateRenderer.registerTemplate('add-milestones/add-milestones-row', require('../components/add-milestones/add-milestones-row.hbs'));
 
 ComponentFactory.registerComponent('text-box', require('../components/text-box/text-box'));
-ComponentFactory.registerComponent('create-mission-card', require('../components/create-mission-card/create-mission-card'));
+ComponentFactory.registerComponent('mission-card', require('../components/mission-card/mission-card'));
 ComponentFactory.registerComponent('progress-bar', require('../components/progress-bar/progress-bar'));
 
 ComponentFactory.registerComponent('add-milestones', require('../components/add-milestones/add-milestones'));

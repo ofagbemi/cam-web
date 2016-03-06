@@ -1,15 +1,40 @@
-<div data-component="mission-card">
-  {{> badge/badge}}
-  <div class="info">
-    <div class="header">
-      <h1 class="title">{{ title }}</h1>
-      <span class="checkpoints-label"> {{numCheckpointsCompleted}}/{{checkpoints.length}} checkpoints completed</span>
+<div data-component="mission-card" class="{{ class }}">
+  {{> close/close}}
+  <div class="header">
+    {{> badge/badge}}
+    <div class="info">
+      <div class="info-header">
+        {{> text-box/text-box class="title" placeholder="Add a new mission" value=title}}
+        <span class="milestones-label">{{numMilestonesCompleted}}/{{milestones.length}} milestones completed</span>
+      </div>
+      {{> progress-bar/progress-bar this}}
+      <div class="milestone-badges">
+        {{#each milestones}}
+        {{> milestone-badge/milestone-badge}}
+        {{/each}}
+      </div>
     </div>
-    {{> progress-bar/progress-bar this}}
-    <div class="checkpoints">
-      {{#each checkpoints}}
-      {{> milestone-badge/milestone-badge}}
+  </div>
+
+  <div class="details">
+    <div class="row family">
+      <span>Assigned to</span>
+      <div class="family-select">
+      {{#each users}}
+        {{!-- Start off preselected --}}
+        {{> user-badge/user-badge selectable=true selected=true}}
       {{/each}}
+      </div>
+    </div>
+
+    <div class="row milestones">
+      <span>Milestones</span>
+      {{> add-milestones/add-milestones}}
+    </div>
+
+    <div data-component="button-group">
+      <button class="cancel">Cancel</button>
+      <button class="active save">Save</button>
     </div>
   </div>
 </div>

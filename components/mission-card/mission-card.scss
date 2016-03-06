@@ -1,44 +1,248 @@
 [data-component="mission-card"] {
+  position: relative;
+  cursor: pointer;
   padding: 30px 65px;
-  display: flex;
 
   background-color: white;
   box-shadow: 0 2px 4px 0 $shadow-color;
   border-radius: 11px;
 
-  [data-component="badge"] {
-    margin-right: 48px;
-    flex: 0 0 auto;
+  position: relative;
+
+  > [data-component="close"] {
+    cursor: pointer;
+    pointer-events: none;
+    position: absolute;
+    top: 18px;
+    right: 18px;
+
+    transform: translate(0, 40px);
+    opacity: 0.0;
+
+    transition: transform 5s $out-bounce-bezier, opacity 0.2s ease-out;
   }
 
-  > .info {
-    flex: 1 0 auto;
+  > .header {
+    display: flex;
+    align-items: center;
+    height: 128px;
 
-    > .header {
-      display: flex;
-      align-items: baseline;
+    > [data-component="badge"] {
+      margin-right: 48px;
+      flex: 0 0 auto;
+    }
 
-      > .title {
-        font-size: 24px;
+    > .info {
+
+      flex: 1 0 auto;
+
+      > .info-header {
+
+        position: relative;
+
+        > .milestones-label {
+          position: absolute;
+          top: 19px;
+          right: 0;
+
+          opacity: 1;
+          transform: translate(0, 0);
+          transition: transform 0.2s $out-bounce-bezier, opacity 0.1s ease-out;
+        }
+
+        > [data-component="text-box"].title {
+          width: 100%;
+          font-size: 24px;
+          transition: transform 0.2s $out-bounce-bezier;
+
+          > input[type="text"] {
+            padding: 11px 0;
+            cursor: pointer;
+          }
+
+          > .border {
+            background-color: transparent;
+          }
+        }
       }
 
-      > .checkpoints-label {
-        margin-left: auto;
-        padding-left: 11px;
+      > [data-component="progress-bar"] {
+        opacity: 1;
+        transition: opacity 0.2s ease-out;
+      }
+
+      > .milestone-badges {
+        display: flex;
+
+        [data-component="milestone-badge"] {
+          opacity: 1;
+          transform: translate(0, 0);
+          transition: transform $out-bounce-bezier 0.2s, opacity 0.2s;
+
+          transition-delay: $max-num-milestones * 0.1s;
+
+          // stagger transitions
+          @for $i from 0 through ($max-num-milestones - 1) {
+            &:nth-child(#{$i+1}) {
+              transition-delay: 0.1s * $i;
+            }
+          }
+        }
+
+        [data-component="milestone-badge"]:first-child {
+          margin-left: auto;
+        }
+
+        [data-component="milestone-badge"]:not(:first-child) {
+          margin-left: 12px;
+        }
+      }
+    }
+  }
+
+  > .details {
+    display: none;
+
+    > .row {
+
+      margin: 24px 0;
+      display: flex;
+      align-items: flex-start;
+
+      &.family {
+        > span {
+          height: 60px; // same height as user badge
+        }
+      }
+
+      &.milestones {
+        > span {
+          height: 44px; // same height as milestone badge
+        }
+      }
+
+      > span {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        width: 128px; // same width as badge
+        margin-right: 48px;
+        flex: 0 0 auto;
         font-size: 14px;
-        color: $caption-color;
+        font-weight: 400;
+      }
+
+      > .family-select [data-component="user-badge"] {
+        margin: 0 11px;
+      }
+    }
+  }
+
+  &.active {
+    cursor: initial;
+
+    > [data-component="close"] {
+      display: initial;
+      transform: translate(0, 0);
+      opacity: 0.5;
+      pointer-events: initial;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      transition: transform 0.4s $out-bounce-bezier, opacity 0.2s ease-out;
+    }
+
+    > .header {
+
+      > .info {
+
+        > .info-header {
+
+          > [data-component="text-box"] {
+
+            > input[type="text"] {
+              cursor: initial;
+            }
+
+            > .border {
+              background-color: $border-color;
+            }
+          }
+
+          > .milestones-label {
+            opacity: 0;
+            transform: translate(-20px, 0);
+          }
+        }
       }
     }
 
-    > .checkpoints {
-      display: flex;
+    > .details {
+      display: initial;
+    }
+  }
 
-      [data-component="milestone-badge"]:first-child {
-        margin-left: auto;
+  &.create, &.active {
+    > .header {
+
+      > .info {
+
+        > .info-header {
+
+          > .milestones-label {
+            opacity: 0;
+            transform: translate(-20px, 0);
+            pointer-events: none;
+          }
+        }
+
+        > [data-component="progress-bar"] {
+          opacity: 0;
+          pointer-events: none;
+        }
+
+        > .milestone-badges {
+          pointer-events: none;
+          > [data-component="milestone-badge"] {
+            opacity: 0;
+            transform: translate(-20px, 0);
+          }
+        }
       }
+    }
+  }
 
-      [data-component="milestone-badge"]:not(:first-child) {
-        margin-left: 12px;
+  &.active:not(.create) {
+    > .header {
+      > .info {
+        > .info-header {
+          > [data-component="text-box"].title {
+            // pretty messy, but w/e
+            transform: translate(0, 37px);
+          }
+        }
+      }
+    }
+  }
+
+  &.create {
+    > .header {
+      > .info {
+        > .info-header {
+          > .milestones-label {
+            display: none;
+          }
+        }
+        > [data-component="progress-bar"] {
+          display: none;
+        }
+
+        > .milestone-badges {
+          display: none;
+        }
       }
     }
   }
