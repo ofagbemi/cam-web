@@ -17,7 +17,7 @@ AddMilestones.prototype.init = function() {
   this.$el.find('[data-component="add-milestones-row"]').each(_.bind(function(index, el) {
     var component = ComponentFactory.getComponent($(el));
     this.milestoneRows.push(component);
-    this._bindRowComponentListeners(component)
+    this._bindRowComponentListeners(component);
   }, this));
 
 };
@@ -42,19 +42,7 @@ AddMilestones.prototype._handleKeyup = function(e, textBoxComponent) {
   // if this is the last row, then typing in it should
   // add a new "Add new milestone" row
   if (textBoxComponent === _.last(this.milestoneRows).textBoxComponent) {
-    var $addMilestone = $(TemplateRenderer.renderTemplate('add-milestones/add-milestones-row', {
-      placeholder: 'Add a milestone'
-    })).addClass('hide');
-
-    // flex reversed to fix dropdown menu positioning
-    this.$rows.prepend($addMilestone);
-    setTimeout(function() {
-      $addMilestone.removeClass('hide');
-    });
-
-    var rowComponent = ComponentFactory.getComponent($addMilestone);
-    this.milestoneRows.push(rowComponent);
-    this._bindRowComponentListeners(rowComponent);
+    this._addNewMilestoneComponent();
   }
 };
 
@@ -63,6 +51,28 @@ AddMilestones.prototype._handleRemove = function(component) {
   if (index > -1) {
     this.milestoneRows.splice(index, 1);
   }
+
+  // if there are no rows remaining, go ahead and
+  // add a new addMilestone row
+  if (this.milestoneRows.length === 0) {
+    this._addNewMilestoneComponent();
+  }
+};
+
+AddMilestones.prototype._addNewMilestoneComponent = function() {
+  var $addMilestone = $(TemplateRenderer.renderTemplate('add-milestones/add-milestones-row', {
+    placeholder: 'Add a milestone'
+  })).addClass('hide');
+
+  // flex reversed to fix dropdown menu positioning
+  this.$rows.prepend($addMilestone);
+  setTimeout(function() {
+    $addMilestone.removeClass('hide');
+  });
+
+  var rowComponent = ComponentFactory.getComponent($addMilestone);
+  this.milestoneRows.push(rowComponent);
+  this._bindRowComponentListeners(rowComponent);
 };
 
 module.exports = AddMilestones;
