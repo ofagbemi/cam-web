@@ -23,8 +23,8 @@
   }],
   "missions": [{
     "title": "Get a dog",
-    "numCheckpointsCompleted": 1,
-    "checkpoints": [{
+    "numMilestonesCompleted": 1,
+    "milestones": [{
       "name": "Choose a dog breed",
       "timesCompleted": 1,
       "timesRemaining": 0,

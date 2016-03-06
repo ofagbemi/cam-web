@@ -14,10 +14,10 @@ CreateMissionCard.prototype.init = function() {
 
   this.closeComponent.on('close', _.bind(this._handleClose, this));
 
-  this.$doneButton = this.$el.find('[data-component="button-group"] button.done');
+  this.$saveButton = this.$el.find('[data-component="button-group"] button.save');
   this.$cancelButton = this.$el.find('[data-component="button-group"] button.cancel');
 
-  this.$doneButton.on('click', _.bind(this._handleDone, this));
+  this.$saveButton.on('click', _.bind(this._handleSave, this));
   this.$cancelButton.on('click', _.bind(this._handleCancel, this));
 
 //  $('html').on('click', _.bind(this._handleHtmlClick, this));
@@ -31,7 +31,7 @@ CreateMissionCard.prototype._handleClick = function() {
   this.titleComponent.focus();
 };
 
-CreateMissionCard.prototype._handleDone = function() {
+CreateMissionCard.prototype._handleSave = function() {
   this._handleClose();
 };
 
@@ -49,7 +49,9 @@ CreateMissionCard.prototype._handleClose = function() {
 };
 
 CreateMissionCard.prototype.clear = function() {
-  this.titleComponent.clear();
+  if (this.$el.hasClass('create')) {
+    this.titleComponent.clear();
+  }
   this.addMilestonesComponent.clear();
 };
 

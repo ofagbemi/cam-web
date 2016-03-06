@@ -18,7 +18,7 @@
     transition: opacity 0.2s ease-out;
 
     &:not(.selected) {
-      opacity: 0.8;
+      opacity: 0.4;
     }
 
     [data-component="checkmark"] {

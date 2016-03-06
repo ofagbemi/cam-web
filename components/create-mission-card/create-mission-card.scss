@@ -32,17 +32,45 @@
       flex: 0 0 auto;
     }
 
-    > [data-component="text-box"] {
-      width: 100%;
-      font-size: 24px;
+    > .info {
 
-      > input[type="text"] {
-        padding: 11px 0;
-        cursor: pointer;
+      flex: 1 0 auto;
+
+      > .info-header {
+
+        position: relative;
+
+        > .milestones-label {
+          position: absolute;
+          top: 19px;
+          right: 0;
+        }
+
+        > [data-component="text-box"].title {
+          width: 100%;
+          font-size: 24px;
+
+          > input[type="text"] {
+            padding: 11px 0;
+            cursor: pointer;
+          }
+
+          > .border {
+            background-color: transparent;
+          }
+        }
       }
 
-      > .border {
-        background-color: transparent;
+      > .milestone-badges {
+        display: flex;
+
+        [data-component="milestone-badge"]:first-child {
+          margin-left: auto;
+        }
+
+        [data-component="milestone-badge"]:not(:first-child) {
+          margin-left: 12px;
+        }
       }
     }
   }
