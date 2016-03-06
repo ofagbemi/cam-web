@@ -15,6 +15,8 @@ ComponentFactory.registerComponent('add-milestones-row', require('../components/
 ComponentFactory.registerComponent('checkmark', require('../components/checkmark/checkmark'));
 ComponentFactory.registerComponent('user-badge', require('../components/user-badge/user-badge'));
 
+ComponentFactory.registerComponent('close', require('../components/close/close'));
+
 //ComponentFactory.registerComponent('dashboard', require('../views/dashboard/dashboard'));
 //ComponentFactory.registerComponent('mission-card', require('../components/mission-card/mission-card'));
 //ComponentFactory.registerComponent('create', require('../components/create/create'));

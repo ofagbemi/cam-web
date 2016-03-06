@@ -20,15 +20,27 @@ UserBadge.prototype.init = function() {
   }, this));
 };
 
+UserBadge.prototype.select = function() {
+  if (!this.$el.hasClass('selected')) {
+    this.checkmarkComponent.check();
+    this.$el.addClass('selected');
+  }
+};
+
+UserBadge.prototype.deselect = function() {
+  if (this.$el.hasClass('selected')) {
+    this.checkmarkComponent.uncheck();
+    this.$el.removeClass('selected');
+  }
+};
+
 UserBadge.prototype._handleClick = function() {
   if (!this.$el.get(0).hasAttribute('data-selectable')) { return; }
 
   if (this.$el.hasClass('selected')) {
-    this.checkmarkComponent.uncheck();
-    this.$el.removeClass('selected');
+    this.deselect();
   } else {
-    this.checkmarkComponent.check();
-    this.$el.addClass('selected');
+    this.select();
   }
 };
 

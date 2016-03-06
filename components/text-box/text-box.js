@@ -22,4 +22,8 @@ TextBox.prototype._emitKeyup = function(e) {
   this.emit('keyup', e, this);
 };
 
+TextBox.prototype.clear = function() {
+  this.$input.val('');
+}
+
 module.exports = TextBox;

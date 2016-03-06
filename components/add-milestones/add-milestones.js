@@ -75,4 +75,11 @@ AddMilestones.prototype._addNewMilestoneComponent = function() {
   this._bindRowComponentListeners(rowComponent);
 };
 
+AddMilestones.prototype.clear = function() {
+  this.milestoneRows = [];
+  this.$rows.empty();
+
+  this._addNewMilestoneComponent();
+};
+
 module.exports = AddMilestones;

@@ -1,4 +1,5 @@
 <div data-component="create-mission-card">
+  {{> close/close}}
   <div class="header">
     {{> badge/badge}}
     {{> text-box/text-box class="title" placeholder="Add a new mission"}}
@@ -17,6 +18,11 @@
     <div class="row milestones">
       <span>Milestones</span>
       {{> add-milestones/add-milestones}}
+    </div>
+
+    <div data-component="button-group">
+      <button class="cancel">Cancel</button>
+      <button class="active done">Done</button>
     </div>
   </div>
 </div>

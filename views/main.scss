@@ -13,6 +13,7 @@
 @import '../components/add-milestones/add-milestones';
 @import '../components/add-milestones/add-milestones-row';
 @import '../components/checkmark/checkmark';
+@import '../components/close/close';
 
 @import '../components/create/create';
 
@@ -58,20 +59,6 @@ button {
   transform: scale(1) translate(0, 0);
   transition: transform $out-bounce-bezier 0.2s;
   &.in {
-    &.left {
-      transform: scale(1.15) translate(4px, 0);
-    }
-
-    &.right {
-      transform: scale(1.15) translate(-4px, 0);
-    }
-
-    &.top {
-      transform: scale(1.15) translate(0, 4px);
-    }
-
-    &.bottom {
-      transform: scale(1.15) translate(0, -4px);
-    }
+    transform: scale(1.15);
   }
 }
