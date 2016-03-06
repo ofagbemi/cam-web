@@ -7,4 +7,39 @@
   top: 0;
   left: 0;
   width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  .buttons {
+    margin-right: 32px;
+
+    > button {
+      cursor: pointer;
+      width: 33px;
+      height: 33px;
+      background-color: transparent;
+      border: none;
+      background-size: cover;
+      background-position: bottom;
+      outline: none;
+
+      &:hover, &.active {
+        background-position: top;
+      }
+
+      &:not(:last-child) {
+        margin-right: 12px;
+      }
+    }
+
+    > button.activity {
+      background-image: url("/images/icons/activity/activity.svg");
+    }
+
+    > button.settings {
+      background-image: url("/images/icons/settings/settings.svg");
+    }
+  }
 }

@@ -15,9 +15,11 @@ UserBadge.prototype.init = function() {
 
   this.$el.on('click', _.bind(this._handleClick, this));
 
-  $(document).ready(_.bind(function() {
-    this.$el.tooltip();
-  }, this));
+  if (this.$el.get(0).hasAttribute('data-toggle')) {
+    $(document).ready(_.bind(function() {
+      this.$el.tooltip();
+    }, this));
+  }
 };
 
 UserBadge.prototype.select = function() {
