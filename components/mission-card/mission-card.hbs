@@ -20,16 +20,32 @@
     <div class="row family">
       <span>Assigned to</span>
       <div class="family-select">
-      {{#each users}}
-        {{!-- Start off preselected --}}
-        {{> user-badge/user-badge selectable=true selected=true}}
-      {{/each}}
+
+      {{#if assignedTo}}
+        {{#each users}}
+
+          {{!-- Only select those that are in the array of user ids --}}
+          {{#xif ../assignedTo 'contains' this.id}}
+          {{> user-badge/user-badge selectable=true selected=true}}
+          {{ else}}
+          {{> user-badge/user-badge selectable=true selected=false}}
+          {{/xif}}
+
+        {{/each}}
+
+        {{else}}
+
+        {{#each users}}
+          {{!-- Start off preselected --}}
+          {{> user-badge/user-badge selectable=true selected=true}}
+        {{/each}}
+      {{/if}}
       </div>
     </div>
 
     <div class="row milestones">
       <span>Milestones</span>
-      {{> add-milestones/add-milestones}}
+      {{> add-milestones/add-milestones this}}
     </div>
 
     <div data-component="button-group">

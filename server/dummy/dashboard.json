@@ -24,6 +24,7 @@
   "missions": [{
     "title": "Get a dog",
     "numMilestonesCompleted": 1,
+    "assignedTo": [0, 2, 3],
     "milestones": [{
       "name": "Choose a dog breed",
       "timesCompleted": 1,

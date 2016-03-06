@@ -1,6 +1,6 @@
-<div class="add" data-component="add-milestones-row">
+<div {{#unless name}}class="add"{{/unless}} data-component="add-milestones-row">
   {{> milestone-badge/milestone-badge}}
-  {{> text-box/text-box placeholder="Add a milestone"}}
+  {{> text-box/text-box placeholder="Add a milestone" value=name}}
 
   <div class="details">
     <div class="dropdown">
