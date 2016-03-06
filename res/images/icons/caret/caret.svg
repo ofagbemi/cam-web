@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="12px" height="8px" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>caret</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Create-Mission" transform="translate(-863.000000, -616.000000)" stroke="#3A96DC" fill="#3A96DC">
+            <g id="Create-Goal" transform="translate(257.000000, 304.000000)">
+                <g id="Checkpoint" transform="translate(231.000000, 294.000000)">
+                    <g id="Time-dropdown" transform="translate(364.000000, 4.000000)">
+                        <path d="M16.6310864,20.4714427 L12.1739904,16.0141212 C11.9419784,15.7821439 11.9419784,15.4059604 12.174139,15.173983 C12.4062995,14.9420057 12.7825392,14.9420057 13.0144026,15.173983 L17.0512925,19.2113097 L21.0881824,15.173983 C21.3201944,14.9420057 21.6964341,14.9420057 21.9284461,15.173983 C22.1604581,15.4059604 22.1604581,15.7819954 21.9285947,16.0141212 L17.4714986,20.4714427 C17.3599487,20.5828275 17.2088884,20.6455 17.0512925,20.6455 C16.8936967,20.6455 16.7426364,20.5828275 16.6310864,20.4714427 Z" id="caret"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

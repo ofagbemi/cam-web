@@ -5,6 +5,7 @@ var express = require('express');
 var router = express.Router();
 
 var ACTION_REDIRECTS = {
+  'splash': ''
 };
 
 function getPath(action, method) {
