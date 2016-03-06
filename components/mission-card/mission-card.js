@@ -36,7 +36,11 @@ MissionCard.prototype._handleClick = function() {
 };
 
 MissionCard.prototype._handleSave = function() {
-  this._handleClose();
+  // step past the event loop -- click events trigger
+  // _handleClick
+  setTimeout(_.bind(function() {
+    this.$el.removeClass('active');
+  }, this));
 };
 
 MissionCard.prototype._handleCancel = function() {
@@ -44,7 +48,7 @@ MissionCard.prototype._handleCancel = function() {
 };
 
 MissionCard.prototype._handleClose = function() {
-  // move past the event loop -- click events trigger
+  // step past the event loop -- click events trigger
   // _handleClick
   setTimeout(_.bind(function() {
     this.$el.removeClass('active');
