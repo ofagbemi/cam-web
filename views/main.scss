@@ -52,3 +52,11 @@ body {
 button {
   font-family: inherit;
 }
+
+.tooltip {
+  transform: scale(1);
+  transition: transform $out-bounce-bezier 0.2s;
+  &.in {
+    transform: scale(1.15);
+  }
+}
