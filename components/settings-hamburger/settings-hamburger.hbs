@@ -1,0 +1,13 @@
+<div data-component="settings-hamburger" class="hide">
+
+  <div class="family">
+    {{#each users}}
+    <div class="user">
+      {{> user-badge/user-badge tooltipPlacement="left"}}
+      <h2>{{ name }}</h2>
+    </div>
+    {{/each}}
+  </div>
+
+  <button class="logout">Sign out</button>
+</div>

@@ -14,6 +14,7 @@
 @import '../components/checkmark/checkmark';
 @import '../components/close/close';
 @import '../components/nav/nav';
+@import '../components/settings-hamburger/settings-hamburger';
 
 @import '../components/create/create';
 
@@ -50,6 +51,7 @@ body {
 
 #container {
   width: 800px;
+  position: relative;
 }
 
 button {

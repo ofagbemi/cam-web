@@ -26,9 +26,9 @@
 
           {{!-- Only select those that are in the array of user ids --}}
           {{#xif ../assignedTo 'contains' this.id}}
-          {{> user-badge/user-badge selectable=true selected=true}}
+          {{> user-badge/user-badge tooltip=true selectable=true selected=true}}
           {{ else}}
-          {{> user-badge/user-badge selectable=true selected=false}}
+          {{> user-badge/user-badge tooltip=true selectable=true selected=false}}
           {{/xif}}
 
         {{/each}}
@@ -37,7 +37,7 @@
 
         {{#each users}}
           {{!-- Start off preselected --}}
-          {{> user-badge/user-badge selectable=true selected=true}}
+          {{> user-badge/user-badge tooltip=true selectable=true selected=true}}
         {{/each}}
       {{/if}}
       </div>

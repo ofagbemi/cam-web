@@ -1,3 +1,3 @@
-<div data-component="user-badge" data-toggle="tooltip" title="Agent {{ name }}" data-placement="top" style="background-image:url('{{ imageUrl }}');border-color:{{ color }};"{{#if selectable}}data-selectable="selectable"{{/if}} class="{{#if selected}}selected{{/if}}">
+<div data-component="user-badge" {{#if tooltip}}data-toggle="tooltip" title="Agent {{ name }}" data-placement="{{#if tooltipPlacement}}{{tooltipPlacement}}{{else}}top{{/if}}"{{/if}} style="background-image:url('{{ imageUrl }}');border-color:{{ color }};"{{#if selectable}}data-selectable="selectable"{{/if}} class="{{#if selected}}selected{{/if}}">
   {{> checkmark/checkmark checked=selected}}
 </div>

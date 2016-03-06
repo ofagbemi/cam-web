@@ -1,0 +1,61 @@
+[data-component="settings-hamburger"] {
+  position: fixed;
+  top: $nav-height;
+  right: 0;
+  background: #fff;
+  padding: 11px 0 0 0;
+  box-shadow: 0 2px 4px 0 $shadow-color;
+
+  transform: translate(0, 0);
+  transition: transform 0.3s;
+
+  &.hide {
+    transform: translate(100%, 0);
+    pointer-events: none;
+  }
+
+  > .family {
+    border-bottom: solid 1px $shadow-color;
+
+    > .user {
+      display: flex;
+      align-items: center;
+      padding: 11px 76px 11px 16px;
+
+      transition: background-color 0.2s ease-out;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $secondary-color;
+        border-color: $secondary-color;
+      }
+
+      > [data-component="user-badge"] {
+        width: 44px;
+        height: 44px;
+        border-width: 4px;
+      }
+
+      > h2 {
+        margin-left: 18px;
+        font-size: 20px;
+      }
+    }
+  }
+
+  button.logout {
+    background: none;
+    font-size: 24px;
+    width: 100%;
+    cursor: pointer;
+    padding: 11px 0;
+    border: none;
+    color: $destructive-color;
+    transition: color 0.05s ease-out, background-color 0.05s ease-out;
+
+    &:hover {
+      background-color: $destructive-color;
+      color: white;
+    }
+  }
+}

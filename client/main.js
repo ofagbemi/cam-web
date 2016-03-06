@@ -17,6 +17,9 @@ ComponentFactory.registerComponent('user-badge', require('../components/user-bad
 
 ComponentFactory.registerComponent('close', require('../components/close/close'));
 
+ComponentFactory.registerComponent('nav', require('../components/nav/nav'));
+ComponentFactory.registerComponent('settings-hamburger', require('../components/settings-hamburger/settings-hamburger'));
+
 //ComponentFactory.registerComponent('dashboard', require('../views/dashboard/dashboard'));
 //ComponentFactory.registerComponent('mission-card', require('../components/mission-card/mission-card'));
 //ComponentFactory.registerComponent('create', require('../components/create/create'));
