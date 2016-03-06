@@ -54,9 +54,23 @@ button {
 }
 
 .tooltip {
-  transform: scale(1);
+  transform: scale(1) translate(0, 0);
   transition: transform $out-bounce-bezier 0.2s;
   &.in {
-    transform: scale(1.15);
+    &.left {
+      transform: scale(1.15) translate(4px, 0);
+    }
+
+    &.right {
+      transform: scale(1.15) translate(-4px, 0);
+    }
+
+    &.top {
+      transform: scale(1.15) translate(0, 4px);
+    }
+
+    &.bottom {
+      transform: scale(1.15) translate(0, -4px);
+    }
   }
 }
