@@ -1,32 +1,13 @@
 [data-component="add-milestones"] {
+  > .rows {
+    [data-component="add-milestones-row"] {
+      margin-bottom: 11px;
 
-  > .row {
-    display: flex;
-    align-items: center;
-    font-size: 18px;
+      transition: transform 0.2s ease-out, opacity 0.2s ease-out;
 
-    > [data-component="text-box"] {
-      margin-left: 18px;
-
-      > input[type="text"] {
-        padding-bottom: 4px;
-      }
-    }
-
-    &.add-milestone {
-      > [data-component="checkpoint-badge"] {
-        background-color: white;
-        background-image: url('/images/icons/inset-plus/inset-plus.svg');
-      }
-
-      [data-component="text-box"] {
-        > input[type="text-box"] {
-          cursor: pointer;
-        }
-
-        > .border {
-          background-color: transparent;
-        }
+      &.hide {
+        opacity: 0;
+        transform: translate(-40px, 0);
       }
     }
   }

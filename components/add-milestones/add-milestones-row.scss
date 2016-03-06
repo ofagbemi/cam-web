@@ -1,0 +1,121 @@
+[data-component="add-milestones-row"] {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+
+  > [data-component="text-box"] {
+    margin-left: 18px;
+
+    > input[type="text"] {
+      padding-bottom: 4px;
+    }
+  }
+
+  > .details {
+
+    display: flex;
+    align-items: center;
+
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+    pointer-events: auto;
+    transform: translate(0, 0);
+    opacity: 1;
+
+    > .dropdown {
+
+      margin: 0 10px 0 22px;
+
+      > button.dropdown-toggle {
+        cursor: pointer;
+        background-color: $secondary-color;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 3px;
+
+        > .caret:after {
+          content: '';
+          display: inline-block;
+          width: 10px;
+          height: 6px;
+          background-image: url('/images/icons/caret/caret.svg');
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+
+        > .text {
+          font-weight: 500;
+          font-size: 18px;
+          margin-left: 11px;
+        }
+      }
+
+      > ul.dropdown-menu {
+        font-size: 18px;
+
+        > li {
+          cursor: pointer;
+          padding: 4px 11px;
+
+          &:hover {
+            background-color: $secondary-color;
+          }
+
+          &.selected {
+            color: white;
+            background-color: $action-color !important;
+          }
+        }
+      }
+    }
+
+    > .remove-button {
+      content: '';
+      cursor: pointer;
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background-image: url('/images/icons/clear/clear.svg');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      margin-left: 22px;
+
+      opacity: 0.5;
+      transition: opacity 0.2s ease-out;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+  }
+
+
+
+  &.add {
+    cursor: pointer;
+
+    > [data-component="milestone-badge"] {
+      background-color: white;
+      background-image: url('/images/icons/inset-plus/inset-plus.svg');
+    }
+
+    [data-component="text-box"] {
+      > input[type="text"] {
+        cursor: pointer;
+      }
+
+      > .border {
+        background-color: transparent;
+      }
+    }
+
+    > .details {
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(-30px, 0);
+    }
+  }
+}

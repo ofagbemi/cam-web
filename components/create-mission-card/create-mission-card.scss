@@ -37,23 +37,35 @@
     > .row {
 
       margin: 24px 0;
+      display: flex;
+      align-items: flex-start;
 
-      > label {
+      &.family {
+        > span {
+          height: 60px; // same height as user badge
+        }
+      }
+
+      &.milestones {
+        > span {
+          height: 44px; // same height as milestone badge
+        }
+      }
+
+      > span {
         display: flex;
         align-items: center;
+        justify-content: flex-end;
 
-        > span {
-          width: 128px; // same width as badge
-          margin-right: 48px;
-          text-align: right;
-          flex: 0 0 auto;
-          font-size: 14px;
-          font-weight: 400;
-        }
+        width: 128px; // same width as badge
+        margin-right: 48px;
+        flex: 0 0 auto;
+        font-size: 14px;
+        font-weight: 400;
+      }
 
-        > .family-select [data-component="user-badge"] {
-          margin: 0 11px;
-        }
+      > .family-select [data-component="user-badge"] {
+        margin: 0 11px;
       }
     }
   }

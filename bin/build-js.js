@@ -1,6 +1,7 @@
 var fs = require('fs');
 var path = require('path');
 var browserify = require('browserify');
+var hbsfy = require('hbsfy');
 
 var IN_PATH = path.join(__dirname, '../client/main.js');
 var OUT_PATH = path.join(__dirname, '../res/js/main.js');
@@ -13,6 +14,7 @@ var stream = fs.createWriteStream(OUT_PATH)
         console.log('Wrote js to %s', OUT_PATH);
     });
 
-browserify(IN_PATH)
-    .bundle()
-    .pipe(stream);
+browserify([IN_PATH], {
+  transform: [hbsfy]
+}).bundle()
+.pipe(stream);
