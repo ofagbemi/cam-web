@@ -10,17 +10,17 @@ function ProgressBar($el) {
 }
 
 ProgressBar.prototype.init = function() {
-  var checkpoints = this.mission.checkpoints;
+  var milestones = this.mission.milestones;
 
-  var numCheckpointsCompleted = 0;
-  var numCheckpoints = 0;
+  var numMilestonesCompleted = 0;
+  var numMilestones = 0;
   var userTotals = {};
-  _.each(checkpoints, function(checkpoint) {
-    _.each(checkpoint.userIds, function(userId) {
+  _.each(milestones, function(milestone) {
+    _.each(milestone.userIds, function(userId) {
       var ent = userTotals[userId];
       userTotals[userId] = ent ? ent + 1 : 1;
     });
-    numCheckpoints += (checkpoint.timesCompleted + checkpoint.timesRemaining);
+    numMilestones += (milestone.timesCompleted + milestone.timesRemaining);
   });
 
   var bars = [];
@@ -28,7 +28,7 @@ ProgressBar.prototype.init = function() {
     var familyMember = ServerData.getFamilyMemberWithId(key);
     var $barEl = $('<div>').addClass('inner')
       .css({
-        width: (value * 100 / numCheckpoints) + '%',
+        width: (value * 100 / numMilestones) + '%',
         backgroundColor: familyMember.color
       }).attr({
         "data-toggle": "tooltip",

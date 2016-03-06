@@ -1,5 +1,8 @@
 <div data-component="add-milestones">
   <div class="rows">
     {{> add-milestones/add-milestones-row}}
+    {{#eachReverse milestones}}
+      {{> add-milestones/add-milestones-row}}
+    {{/eachReverse}}
   </div>
 </div>
