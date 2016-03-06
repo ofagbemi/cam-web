@@ -1,5 +1,8 @@
 [data-component="add-milestones"] {
   > .rows {
+    display: flex;
+    flex-direction: column-reverse; // to allow dropdown menus to appear over lower elements
+
     [data-component="add-milestones-row"] {
       margin-bottom: 11px;
 

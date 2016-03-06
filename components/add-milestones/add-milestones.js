@@ -24,21 +24,30 @@ AddMilestones.prototype.init = function() {
 
 AddMilestones.prototype._bindRowComponentListeners = function(rowComponent) {
   rowComponent.textBoxComponent.on('keyup', _.bind(this._handleKeyup, this));
-  rowComponent.on('remove', this._handleRemove);
+  rowComponent.on('remove', _.bind(this._handleRemove, this));
 };
 
 AddMilestones.prototype._handleKeyup = function(e, textBoxComponent) {
+  // hitting enter should jump down to the "Add new milestone row" and trigger
+  // its click event if there isn't an "Add new milestone" row, then we should
+  //  just ignore the keypress
+  if (e.keyCode === 13) {
+    var lastRow = _.last(this.milestoneRows);
+    if (!lastRow.$el.hasClass('add')) { return; }
+
+    lastRow.$el.click();
+    return;
+  }
+
   // if this is the last row, then typing in it should
   // add a new "Add new milestone" row
-
-  console.log(_.last(this.milestoneRows).$el);
-
   if (textBoxComponent === _.last(this.milestoneRows).textBoxComponent) {
     var $addMilestone = $(TemplateRenderer.renderTemplate('add-milestones/add-milestones-row', {
       placeholder: 'Add a milestone'
     })).addClass('hide');
 
-    this.$rows.append($addMilestone);
+    // flex reversed to fix dropdown menu positioning
+    this.$rows.prepend($addMilestone);
     setTimeout(function() {
       $addMilestone.removeClass('hide');
     });
