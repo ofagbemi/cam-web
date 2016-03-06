@@ -59,11 +59,11 @@ MissionCard.prototype._handleClose = function() {
 MissionCard.prototype.clear = function() {
   if (this.$el.hasClass('create')) {
     this.titleComponent.clear();
+    this.addMilestonesComponent.clear();
+    _.each(this.userBadgeComponents, function(badge) {
+      badge.select();
+    });
   }
-  this.addMilestonesComponent.clear();
-  _.each(this.userBadgeComponents, function(badge) {
-    badge.select();
-  });
 };
 
 module.exports = MissionCard;
