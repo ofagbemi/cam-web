@@ -12,6 +12,8 @@ ComponentFactory.registerComponent('progress-bar', require('../components/progre
 ComponentFactory.registerComponent('add-milestones', require('../components/add-milestones/add-milestones'));
 ComponentFactory.registerComponent('add-milestones-row', require('../components/add-milestones/add-milestones-row'));
 
+ComponentFactory.registerComponent('user-badge', require('../components/user-badge/user-badge'));
+
 //ComponentFactory.registerComponent('dashboard', require('../views/dashboard/dashboard'));
 //ComponentFactory.registerComponent('mission-card', require('../components/mission-card/mission-card'));
 //ComponentFactory.registerComponent('create', require('../components/create/create'));
