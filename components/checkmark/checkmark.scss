@@ -12,6 +12,8 @@
   transition: transform 0.2s $out-bounce-bezier;
 
   &.checked {
+    background-color: $action-color;
+    box-shadow: none;
     background-image: url('/images/icons/checkmark/checkmark.svg');
     transform: scale(1.2);
   }
