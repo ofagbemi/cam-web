@@ -1,10 +1,63 @@
 #dashboard {
 
-  [data-component="mission-card"] {
-    margin-bottom: 24px;
+  > .loading-wrap {
+    display: none;
+  }
+
+  > .agent-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 1;
+    transform: translate(0, 10px);
+    transition: transform 0.4s $out-bounce-bezier, opacity 0.2s ease-out;
+    transition-delay: 0.8s;
   }
 
   > [data-component="button-group"] {
     margin: 30px 0 40px 0;
+  }
+
+  > .mission-cards {
+    [data-component="mission-card"] {
+      margin-bottom: 24px;
+      opacity: 1;
+      pointer-events: initial;
+      transform: translate(0, 0) scale(1);
+      transition: transform 0.4s $out-bounce-bezier, opacity 0.2s ease-out;
+    }
+
+    > #active-missions {
+      > [data-component="mission-card"] {
+        transition-delay: $max-num-mission-cards * 0.1s;
+        // stagger transition
+        @for $i from 1 through ($max-num-mission-cards) {
+          &:nth-child(#{$i}) {
+            transition-delay: 0.1s * $i;
+          }
+        }
+      }
+    }
+  }
+
+  &.loading {
+    > .loading-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    > .agent-wrap {
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(0, 40px);
+    }
+
+    [data-component="mission-card"] {
+      opacity: 0;
+      transform: translate(0, 100px) scale(0.8);
+      pointer-events: none;
+    }
   }
 }
