@@ -11,7 +11,7 @@ Dashboard.prototype.init = function() {
 
     setTimeout(_.bind(function() {
       this.$el.removeClass('loading');
-    }, this), 2000);
+    }, this), 4000);
   }, this));
 };
 
