@@ -23,6 +23,7 @@
   }],
   "missions": [{
     "title": "Get a dog",
+    "badge": "paw",
     "numMilestonesCompleted": 1,
     "assignedTo": [0, 2, 3],
     "milestones": [{
