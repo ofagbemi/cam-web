@@ -1,5 +1,9 @@
 [data-component="badge-menu"] {
-  .badges {
+  > h2 {
+    font-size: 24px;
+  }
+
+  > .badges {
     display: flex;
     width: (44px + 24px) * 4;
     flex-wrap: wrap;

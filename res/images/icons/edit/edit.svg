@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>edit</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Create-Mission" transform="translate(-399.000000, -417.000000)" fill="#3A96DC">
+            <g id="Create-Goal" transform="translate(257.000000, 304.000000)">
+                <g id="Edit-button" transform="translate(142.000000, 113.000000)">
+                    <g id="Group-3">
+                        <path d="M32.3066667,12.5466667 C31.88,12.12 31.2933333,11.9066667 30.7333333,11.9066667 C30.1733333,11.9066667 29.5866667,12.12 29.16,12.5466667 L17.64,24.0666667 L23.9333333,30.36 L35.4533333,18.84 C36.3333333,17.96 36.3333333,16.5733333 35.4533333,15.6933333 L32.3066667,12.5466667 L32.3066667,12.5466667 Z" id="Shape"></path>
+                        <path d="M22.28,31.8533333 L16.1466667,25.72 L13.88,34.12 L22.28,31.8533333 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

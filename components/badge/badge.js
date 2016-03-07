@@ -13,6 +13,9 @@ function Badge($el) {
 }
 
 Badge.prototype.init = function() {
+  if (this._init) { return; }
+  this._init = true;
+
   $(document).ready(_.bind(function() {
     this.$el.popover({
       container: this.$el,
@@ -24,28 +27,31 @@ Badge.prototype.init = function() {
     });
   }, this));
 
-  this.$el.on('click', _.bind(this._handleClick, this));
+
+  this.$editButton = this.$el.find('button.edit');
+
+  console.log(this.$editButton.length);
+  this.$editButton.on('click', _.bind(this._handleEdit, this));
   $('html').on('click', _.bind(this._handleHtmlClick, this));
 };
 
-Badge.prototype._handleClick = function(e) {
-  if (this.$el.hasClass('active')) {
-    // don't hide the popover if the click hits the popover
-    // element
-    var popoverEl = this.$el.find('.popover').get(0);
-    if (popoverEl && popoverEl !== e.target && !popoverEl.contains(e.target)) {
-      this._closeBadgeMenu();
-    }
+Badge.prototype.setEditable = function(editable) {
+  if (editable) {
+    this.$el.addClass('editable');
   } else {
+    this.$el.removeClass('editable');
+  }
+};
+
+Badge.prototype._handleEdit = function(e) {
+  if(this.$el.hasClass('editable') && !this.$el.hasClass('active')) {
     this._openBadgeMenu();
   }
 };
 
 Badge.prototype._handleHtmlClick = function(e) {
-  if (e.target === this.$el.get(0)) { return; }
-
-  var popoverEl = this.$el.find('> .popover').get(0);
-  if (popoverEl && e.target !== popoverEl && !popoverEl.contains(e.target)) {
+  var el = this.$el.get(0);
+  if(el !== e.target && !el.contains(e.target)) {
     this._closeBadgeMenu();
   }
 };
