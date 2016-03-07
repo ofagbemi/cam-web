@@ -37,7 +37,7 @@
 
   @each $badge in $badges {
     &.#{$badge} {
-      background-image: url('/images/icons/badges/#{$badge}@3x.png');
+      background-image: url('/images/icons/badges/#{$badge}@3x.png') !important;
     }
   }
 
