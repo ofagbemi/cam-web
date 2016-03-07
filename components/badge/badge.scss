@@ -2,5 +2,15 @@
   width: 128px;
   height: 128px;
   border-radius: 128px;
+  border: solid 11px white;
   box-shadow: 0 3px 4px 0 $shadow-color;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @each $badge in $badges {
+    &.#{$badge} {
+      background-image: url('/images/icons/badges/#{$badge}@3x.png');
+    }
+  }
 }
