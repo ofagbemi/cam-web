@@ -19,7 +19,7 @@ TemplateRenderer.prototype.renderTemplate = function(name, data) {
   $nodes.each(function() {
     ComponentFactory.hydrate(this);
   });
-  return $nodes.get();
+  return $nodes;
 };
 
 TemplateRenderer.prototype.registerTemplate = function(name, template) {

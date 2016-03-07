@@ -1,6 +1,7 @@
 var TemplateRenderer = require('./services/template-renderer');
 var ComponentFactory = require('./services/component-factory');
 
+TemplateRenderer.registerTemplate('activity/activity', require('../components/activity/activity.hbs'));
 TemplateRenderer.registerTemplate('text-box/text-box', require('../components/text-box/text-box.hbs'));
 TemplateRenderer.registerTemplate('milestone-badge/milestone-badge', require('../components/milestone-badge/milestone-badge.hbs'));
 TemplateRenderer.registerTemplate('add-milestones/add-milestones-row', require('../components/add-milestones/add-milestones-row.hbs'));

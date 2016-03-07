@@ -4,6 +4,9 @@ var $ = require('jquery');
 var inherits = require('inherits');
 var EventEmitter = require('events').EventEmitter;
 
+var TemplateRenderer = require('../../client/services/template-renderer');
+var ServerData = require('../../client/services/server-data');
+
 function Nav($el) {
   EventEmitter.call(this);
   this.$el = $el;
@@ -14,13 +17,35 @@ Nav.prototype.init = function() {
   if (this._init) { return; }
   this._init = true;
 
-  this.$settingsButton = this.$el.find('button.settings');
   this.$activityButton = this.$el.find('button.activity');
+  this.$settingsButton = this.$el.find('button.settings');
+
+  $(document).ready(_.bind(function() {
+    this.$activityButton.popover({
+      container: '[data-component="nav"] .buttons',
+      html: true,
+      content: _.bind(function() {
+        var $template = this._renderActivityTemplate();
+        return $template.wrap('<div></div>').parent().html();
+      }, this)
+    });
+  }, this));
+
+  this.$activityButton.on('click', _.bind(this._handleActivityClick, this));
 
   this.$settingsButton.on('click', _.bind(this._handleSettingsClick, this));
   this.$settingsHamburger = $('[data-component="settings-hamburger"]');
 
-  $('html').on('click', _.bind(this._handleHtmlClick, this));
+  $('html').on('click', _.bind(this._handleHtmlClickActivity, this));
+  $('html').on('click', _.bind(this._handleHtmlClickSettings, this));
+};
+
+Nav.prototype._handleActivityClick = function() {
+  if(this.$activityButton.hasClass('active')) {
+    this._closeActivity();
+  } else {
+    this._openActivity();
+  }
 };
 
 Nav.prototype._handleSettingsClick = function() {
@@ -31,7 +56,17 @@ Nav.prototype._handleSettingsClick = function() {
   }
 };
 
-Nav.prototype._handleHtmlClick = function(e) {
+Nav.prototype._handleHtmlClickActivity = function(e) {
+  if (e.target === this.$activityButton.get(0)) { return; }
+
+  var popoverEl = this.$el.find('.buttons .popover').get(0);
+  if (popoverEl && e.target !== popoverEl && !popoverEl.contains(e.target)) {
+    this._closeActivity();
+  }
+
+};
+
+Nav.prototype._handleHtmlClickSettings = function(e) {
   if (e.target === this.$settingsButton.get(0)) { return; }
 
   var hamburgerEl = this.$settingsHamburger.get(0);
@@ -40,7 +75,15 @@ Nav.prototype._handleHtmlClick = function(e) {
   }
 };
 
+Nav.prototype._openActivity = function() {
+  this.$activityButton.addClass('active');
+  this.$activityButton.popover('show');
+};
 
+Nav.prototype._closeActivity = function() {
+  this.$activityButton.removeClass('active');
+  this.$activityButton.popover('hide');
+};
 
 Nav.prototype._openSettings = function() {
   this.$settingsButton.addClass('active');
@@ -50,6 +93,12 @@ Nav.prototype._openSettings = function() {
 Nav.prototype._closeSettings = function() {
   this.$settingsButton.removeClass('active');
   this.emit('close-settings', this);
+};
+
+Nav.prototype._renderActivityTemplate = function() {
+  return TemplateRenderer.renderTemplate('activity/activity', {
+    activity: ServerData.getActivity()
+  });
 };
 
 module.exports = Nav;

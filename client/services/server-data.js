@@ -21,4 +21,8 @@ ServerData.prototype.getFamilyMemberWithId = function(id) {
   return this.familyMembers[id];
 };
 
+ServerData.prototype.getActivity = function() {
+  return this.data.activity;
+};
+
 module.exports = new ServerData(data);

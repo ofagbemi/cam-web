@@ -29,12 +29,22 @@
       "name": "Choose a dog breed",
       "timesCompleted": 1,
       "timesRemaining": 0,
-      "userIds": [0]
+      "userIds": [2]
     }, {
       "name": "Walk Mr. Jackson's dog",
       "timesCompleted": 1,
       "timesRemaining": 2,
       "userIds": [0]
     }]
+  }],
+  "activity": [{
+    "title": "Agent Madelyn completed a milestone!",
+    "caption": "Get a dog - Walk Mr. Jackson's dog"
+  }, {
+    "title": "Agent Bryson completed a milestone!",
+    "caption": "Get a dog - Choose a dog breed"
+  }, {
+    "title": "Agent Bryson completed a mission!",
+    "caption": "Learn to ride a bike"
   }]
 }

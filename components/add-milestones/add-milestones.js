@@ -60,9 +60,9 @@ AddMilestones.prototype._handleRemove = function(component) {
 };
 
 AddMilestones.prototype._addNewMilestoneComponent = function() {
-  var $addMilestone = $(TemplateRenderer.renderTemplate('add-milestones/add-milestones-row', {
+  var $addMilestone = TemplateRenderer.renderTemplate('add-milestones/add-milestones-row', {
     placeholder: 'Add a milestone'
-  })).addClass('hide');
+  }).addClass('hide');
 
   // flex reversed to fix dropdown menu positioning
   this.$rows.prepend($addMilestone);
