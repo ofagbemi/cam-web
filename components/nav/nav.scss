@@ -13,7 +13,12 @@
   justify-content: flex-end;
 
   .buttons {
-    margin-right: 32px;
+    position: relative;
+    margin-right: 20px;
+
+    > .popover {
+      margin-right: 11px;
+    }
 
     > button {
       cursor: pointer;
@@ -24,17 +29,17 @@
       background-size: cover;
       background-position: bottom;
       outline: none;
+      margin-right: 12px;
+
+      transition: background-position 0.24s $in-out-bounce-bezier;
 
       &:hover, &.active {
         background-position: top;
       }
-
-      &:not(:last-child) {
-        margin-right: 12px;
-      }
     }
 
     > button.activity {
+      position: relative;
       background-image: url("/images/icons/activity/activity.svg");
     }
 

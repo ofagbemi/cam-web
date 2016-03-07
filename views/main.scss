@@ -15,6 +15,7 @@
 @import '../components/close/close';
 @import '../components/nav/nav';
 @import '../components/settings-hamburger/settings-hamburger';
+@import '../components/activity/activity';
 
 // Views
 @import 'dashboard/dashboard';
@@ -57,9 +58,35 @@ button {
 }
 
 .tooltip {
-  transform: scale(1) translate(0, 0);
+  transform: scale(1);
   transition: transform $out-bounce-bezier 0.2s;
   &.in {
     transform: scale(1.15);
+  }
+}
+
+.popover {
+  box-shadow: 0 2px 2px 0 $shadow-color;
+  border-radius: 4px;
+  max-width: 400px;
+
+  opacity: 0;
+  margin-top: 3px;
+  transform: scale(1) translate(0, -10px);
+  transition: transform $out-bounce-bezier 0.2s, opacity ease-out 0.2s;
+  &.in {
+    opacity: 1;
+    transform: scale(1.01) translate(0, 0);
+  }
+
+  &.bottom > .arrow {
+    margin-left: -12px;
+    width: 24px;
+    height: 11px;
+    background-image: url('/images/icons/popover-tail/popover-tail@2x.png');
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    top: -11px;
   }
 }

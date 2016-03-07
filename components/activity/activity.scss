@@ -1,0 +1,32 @@
+[data-component="activity"] {
+  > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    > li {
+      cursor: pointer;
+      padding: 11px 18px 11px 11px;
+      transition: background-color 0.2s ease-out;
+
+      &:not(:last-child) {
+        border-bottom: solid 1px $shadow-color;
+      }
+
+      > h4.title {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+
+      > span.caption {
+        font-size: 14px;
+        color: $caption-color;
+      }
+
+      &:hover {
+        background-color: $secondary-color;
+      }
+    }
+  }
+}
