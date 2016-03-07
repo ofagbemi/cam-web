@@ -15,7 +15,7 @@
   <div class="mission-cards">
     {{> mission-card/mission-card class="create"}}
     <div id="active-missions">
-      {{#each missions}}
+      {{#each missions.active}}
         {{> mission-card/mission-card users=../users}}
       {{/each}}
     </div>
