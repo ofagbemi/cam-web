@@ -67,6 +67,7 @@ MissionCard.prototype.clear = function() {
     _.each(this.userBadgeComponents, function(badge) {
       badge.select();
     });
+    this.badgeComponent.clear();
   }
 };
 

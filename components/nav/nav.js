@@ -25,8 +25,7 @@ Nav.prototype.init = function() {
       container: '[data-component="nav"] .buttons',
       html: true,
       content: _.bind(function() {
-        var $template = this._renderActivityTemplate();
-        return $template.wrap('<div></div>').parent().html();
+        return this._renderActivityTemplate();
       }, this)
     });
   }, this));
