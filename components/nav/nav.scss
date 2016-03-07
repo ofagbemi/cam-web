@@ -33,7 +33,7 @@
 
       transition: background-position 0.24s $in-out-bounce-bezier;
 
-      &:hover, &.active {
+      &:hover, &.active, &:focus {
         background-position: top;
       }
     }
