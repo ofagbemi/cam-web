@@ -19,6 +19,8 @@ MissionCard.prototype.init = function() {
 
   this.closeComponent.on('close', _.bind(this._handleClose, this));
 
+  this.badgeComponent = ComponentFactory.getComponent(this.$el.find('> .header > [data-component="badge"]'));
+
   this.$saveButton = this.$el.find('[data-component="button-group"] button.save');
   this.$cancelButton = this.$el.find('[data-component="button-group"] button.cancel');
 
@@ -32,6 +34,7 @@ MissionCard.prototype._handleClick = function() {
   if (this.$el.hasClass('active')) { return; }
 
   this.$el.addClass('active');
+  this.badgeComponent.setEditable(true);
   this.titleComponent.focus();
 };
 
@@ -52,6 +55,7 @@ MissionCard.prototype._handleClose = function() {
   // _handleClick
   setTimeout(_.bind(function() {
     this.$el.removeClass('active');
+    this.badgeComponent.setEditable(false);
     this.clear();
   }, this));
 };
@@ -63,6 +67,7 @@ MissionCard.prototype.clear = function() {
     _.each(this.userBadgeComponents, function(badge) {
       badge.select();
     });
+    this.badgeComponent.clear();
   }
 };
 

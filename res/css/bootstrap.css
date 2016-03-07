@@ -298,13 +298,8 @@
   display: block;
 }
 .popover > .arrow {
-/*  border-width: 11px;*/
 }
 .popover > .arrow:after {
-/*
-  border-width: 10px;
-  content: "";
-*/
 }
 .popover.top > .arrow {
   left: 50%;
