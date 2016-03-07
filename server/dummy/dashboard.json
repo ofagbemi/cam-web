@@ -6,42 +6,527 @@
   "users": [{
     "id": 0,
     "name": "Madelyn",
-    "color": "#fbc02d",
+    "color": "#f8c235",
     "imageUrl": "/images/demo/profile-photos/madelyn.png"
 
   }, {
     "id": 1,
     "name": "Mom",
-    "color": "#9013fe",
+    "color": "#9d5ab4",
     "imageUrl": "/images/demo/profile-photos/mom.png"
   }, {
     "id": 2,
     "name": "Bryson",
-    "color": "#00bcd4",
+    "color": "#00cc76",
     "imageUrl": "/images/demo/profile-photos/bryson.png"
   }, {
     "id": 3,
     "name": "Dad",
-    "color": "#4A90E2",
+    "color": "#f14539",
     "imageUrl": "/images/demo/profile-photos/dad.png"
   }],
-  "missions": [{
-    "title": "Get a dog",
-    "badge": "paw",
-    "numMilestonesCompleted": 1,
-    "assignedTo": [0, 2, 3],
-    "milestones": [{
-      "name": "Choose a dog breed",
-      "timesCompleted": 1,
-      "timesRemaining": 0,
-      "userIds": [2]
-    }, {
-      "name": "Walk Mr. Jackson's dog",
-      "timesCompleted": 1,
-      "timesRemaining": 2,
-      "userIds": [0]
-    }]
-  }],
+ "missions": {
+    "active": [
+     {
+        "title": "Get a dog",
+        "numMilestonesCompleted": 4,
+        "assignedTo": [0, 2, 3],
+        "milestones": [
+        {
+          "name": "Choose a dog breed",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [2]
+        },
+        {
+          "name": "Learn what dogs can/can't eat",
+          "timesCompleted": 0,
+          "timesRemaining": 1,
+          "userIds": []
+        },
+        {
+          "name": "Walk Mr. Jackson's dog",
+          "timesCompleted": 2,
+          "timesRemaining": 1,
+          "userIds": [0, 2]
+        },
+        {
+          "name": "House-sit for the Fitzgeralds",
+          "timesCompleted": 1,
+          "timesRemaining": 2,
+          "userIds": [2]
+        },
+        {
+          "name": "Prepare the house",
+          "timesCompleted": 0,
+          "timesRemaining": 1,
+          "userIds": []
+        },
+        {
+          "name": "Choose a puppy!",
+          "timesCompleted": 0,
+          "timesRemaining": 1,
+          "userIds": []
+        }]
+     },
+     {
+        "title": "Explore Florence",
+        "numMilestonesCompleted": 5,
+        "assignedTo": [0, 1, 2, 3],
+        "milestones": [
+        {
+          "name": "Find the Statue of David",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [2]
+        }, {
+          "name": "Have an Italian pizza",
+          "timesCompleted": 2,
+          "timesRemaining": 0,
+          "userIds": [0, 2]
+        }, {
+          "name": "Order gelato in Italian",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [2]
+        }, {
+          "name": "Go to the top of the Duomo",
+          "timesCompleted": 0,
+          "timesRemaining": 1,
+          "userIds": []
+        }, {
+          "name": "Find a statue of a lion",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [0]
+        }, {
+          "name": "Feed the pigeons",
+          "timesCompleted": 0,
+          "timesRemaining": 1,
+          "userIds": []
+        }, {
+          "name": "Choose a favorite ponte",
+          "timesCompleted": 0,
+          "timesRemaining": 1,
+          "userIds": []
+        }]
+     },
+     {
+        "title": "Learn about dinosaurs",
+        "numMilestonesCompleted": 4,
+        "assignedTo": [0, 1, 2],
+        "milestones": [
+        {
+          "name": "Learn about a dinosaur species",
+          "timesCompleted": 2,
+          "timesRemaining": 3,
+          "userIds": [2, 0]
+        },
+        {
+          "name": "Invent a prehistoric creature",
+          "timesCompleted": 0,
+          "timesRemaining": 1,
+          "userIds": []
+        },
+        {
+          "name": "Dig for fossils in the park",
+          "timesCompleted": 0,
+          "timesRemaining": 1,
+          "userIds": [0, 2]
+        },
+        {
+          "name": "Visit the Natural History museum",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [2]
+        },
+        {
+          "name": "Visit a real dig site",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [0]
+        }]
+     },
+     {
+        "title": "Learn to make a pasta dinner",
+        "numMilestonesCompleted": 4,
+        "assignedTo": [2, 1],
+        "milestones": [
+        {
+          "name": "Learn to set the table",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [2]
+        },
+        {
+          "name": "Learn about the parts of a healthy meal",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [2]
+        },
+        {
+          "name": "Learn to make pasta",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [2]
+        },
+        {
+          "name": "Learn to make sauce",
+          "timesCompleted": 0,
+          "timesRemaining": 1,
+          "userIds": []
+        },
+        {
+          "name": "Learn to do dishes",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": []
+        }]
+     },
+     {
+        "title": "Become an engineer",
+        "numMilestonesCompleted": 3,
+        "assignedTo": [0, 3],
+        "milestones": [
+        {
+          "name": "Build a catapult",
+          "timesCompleted": 0,
+          "timesRemaining": 1,
+          "userIds": []
+        },
+        {
+          "name": "Build a straw boat",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [0]
+        },
+        {
+          "name": "Build a parachute for a toy",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [0]
+        },
+        {
+          "name": "Build a balloon-powered car",
+          "timesCompleted": 0,
+          "timesRemaining": 1,
+          "userIds": []
+        },
+        {
+          "name": "Design a marble run",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [0]
+        }]
+     },
+     {
+        "title": "Teach Mom & Dad something",
+        "numMilestonesCompleted": 3,
+        "assignedTo": [0, 2],
+        "milestones": [
+        {
+          "name": "Choose a cool topic",
+          "timesCompleted": 2,
+          "timesRemaining": 0,
+          "userIds": [0, 2]
+        },
+        {
+          "name": "Read a book",
+          "timesCompleted": 2,
+          "timesRemaining": 0,
+          "userIds": [0, 2]
+        },
+        {
+          "name": "Talk to an expert",
+          "timesCompleted": 1,
+          "timesRemaining": 1,
+          "userIds": [2]
+        },
+        {
+          "name": "Share with the family!",
+          "timesCompleted": 0,
+          "timesRemaining": 2,
+          "userIds": []
+        }]
+     },
+     {
+        "title": "Learn to make films",
+        "numMilestonesCompleted": 3,
+        "assignedTo": [0],
+        "milestones": [
+        {
+          "name": "Create a cardboard phone stand",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [0]
+        },
+        {
+          "name": "Storyboard a stop animation film",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [0]
+        },
+        {
+          "name": "Make a stop animation film",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [0]
+        },
+        {
+          "name": "Storyboard a timelapse film",
+          "timesCompleted": 0,
+          "timesRemaining": 1,
+          "userIds": []
+        },
+        {
+          "name": "Make a timelapse film",
+          "timesCompleted": 0,
+          "timesRemaining": 1,
+          "userIds": []
+        }]
+     },
+     {
+        "title": "Exercise your imagination",
+        "numMilestonesCompleted": 2,
+        "assignedTo": [2],
+        "milestones": [
+        {
+          "name": "Design a civilization",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [2]
+        },
+        {
+          "name": "Write a story",
+          "timesCompleted": 0,
+          "timesRemaining": 1,
+          "userIds": []
+        },
+        {
+          "name": "Keep a dream diary for a week",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [2]
+        },
+        {
+          "name": "Draw a dream",
+          "timesCompleted": 0,
+          "timesRemaining": 1,
+          "userIds": []
+        }]
+     }],
+    "completed": [
+      {
+        "title": "Go camping",
+        "numMilestonesCompleted": 9,
+        "assignedTo": [0, 1, 2, 3],
+        "milestones": [
+        {
+          "name": "Learn how to set up a tent",
+          "timesCompleted": 2,
+          "timesRemaining": 0,
+          "userIds": [0, 2]
+        },
+        {
+          "name": "Pick a park",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [0]
+        },
+        {
+          "name": "Plan out meals",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [2]
+        },
+        {
+          "name": "Learn how to light a fire",
+          "timesCompleted": 2,
+          "timesRemaining": 0,
+          "userIds": [0, 2]
+        },
+        {
+          "name": "Learn how to fish",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [2]
+        },
+        {
+          "name": "Go on a practice hike",
+          "timesCompleted": 2,
+          "timesRemaining": 0,
+          "userIds": [0, 2]
+        }]
+     },
+     {
+        "title": "Become a prankster",
+        "numMilestonesCompleted": 6,
+        "assignedTo": [0, 2],
+        "milestones": [
+        {
+          "name": "Glue a coin to the sidewalk",
+          "timesCompleted": 2,
+          "timesRemaining": 0,
+          "userIds": [0, 2]
+        },
+        {
+          "name": "Fake something gross",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [0]
+        },
+        {
+          "name": "Prank someone's food",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [2]
+        },
+        {
+          "name": "Make a fake sign",
+          "timesCompleted": 2,
+          "timesRemaining": 0,
+          "userIds": [0, 2]
+        }]
+     },
+     {
+        "title": "Have a game night",
+        "numMilestonesCompleted": 6,
+        "assignedTo": [0, 1, 2, 3],
+        "milestones": [
+        {
+          "name": "Master Settlers of Catan",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [1]
+        },
+        {
+          "name": "Master Apples to Apples",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [2]
+        },
+        {
+          "name": "Master Blokus",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [0]
+        },
+        {
+          "name": "Master Guess Who?",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [3]
+        },
+        {
+          "name": "Master Battleship",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [2]
+        },
+        {
+          "name": "Master Quelf",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [0]
+        }]
+     },
+     {
+        "title": "Learn to be a spy",
+        "numMilestonesCompleted": 3,
+        "assignedTo": [2],
+        "milestones": [
+        {
+          "name": "Make a scytale",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [2]
+        },
+        {
+          "name": "Make a cipher",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [2]
+        },
+        {
+          "name": "Make a substitution cipher",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [2]
+        }]
+     },
+     {
+        "title": "Enter the science fair",
+        "numMilestonesCompleted": 6,
+        "assignedTo": [0, 2],
+        "milestones": [
+        {
+          "name": "Choose a project",
+          "timesCompleted": 2,
+          "timesRemaining": 0,
+          "userIds": [0, 2]
+        },
+        {
+          "name": "Do the experiment",
+          "timesCompleted": 2,
+          "timesRemaining": 0,
+          "userIds": [0, 2]
+        },
+        {
+          "name": "Make a poster",
+          "timesCompleted": 2,
+          "timesRemaining": 0,
+          "userIds": [0, 2]
+        }]
+    },
+    {
+        "title": "Perform at the winter piano recital",
+        "numMilestonesCompleted": 9,
+        "assignedTo": [2],
+        "milestones": [
+        {
+          "name": "Learn a song",
+          "timesCompleted": 5,
+          "timesRemaining": 0,
+          "userIds": [2]
+        },
+        {
+          "name": "Do a practice recital for Nana",
+          "timesCompleted": 2,
+          "timesRemaining": 0,
+          "userIds": [2]
+        }]
+    },
+    {
+        "title": "Start a business",
+        "numMilestonesCompleted": 6,
+        "assignedTo": [0, 2],
+        "milestones": [
+        {
+          "name": "Find something to sell",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [2]
+        },
+        {
+          "name": "Design a company name and logo",
+          "timesCompleted": 1,
+          "timesRemaining": 0,
+          "userIds": [0]
+        },
+        {
+          "name": "Try it!",
+          "timesCompleted": 2,
+          "timesRemaining": 0,
+          "userIds": [0, 2]
+        },
+        {
+          "name": "Get user feedback",
+          "timesCompleted": 2,
+          "timesRemaining": 0,
+          "userIds": [0, 2]
+        }]
+    }
+  ]},
   "activity": [{
     "title": "Agent Madelyn completed a milestone!",
     "caption": "Get a dog - Walk Mr. Jackson's dog"
