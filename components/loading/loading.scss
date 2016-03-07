@@ -1,0 +1,21 @@
+[data-component="loading"] {
+  display: flex;
+  align-items: center;
+
+  > .loading-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 64px;
+
+    border: solid 2px $secondary-color;
+    border-top: solid 4px $action-color;
+
+    animation: spin 2s ease infinite, pulsate 4s ease infinite;
+  }
+
+  > h2 {
+    color: $caption-color;
+    margin-left: 14px;
+    animation: pulsate 4s ease infinite;
+  }
+}

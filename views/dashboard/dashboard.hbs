@@ -1,13 +1,23 @@
-<div id="dashboard" data-component="dashboard">
+<div id="dashboard" data-component="dashboard" class="loading">
   <div data-component="button-group">
     <button class="active">Active Missions</button>
     <button>Completed Missions</button>
   </div>
 
-  {{> mission-card/mission-card class="create"}}
-  <div id="active-goals">
-    {{#each missions}}
-      {{> mission-card/mission-card users=../users}}
-    {{/each}}
+  <div class="loading-wrap">
+    {{> loading/loading}}
+  </div>
+
+  <div class="agent-wrap">
+    {{> agent/agent}}
+  </div>
+
+  <div class="mission-cards">
+    {{> mission-card/mission-card class="create"}}
+    <div id="active-missions">
+      {{#each missions}}
+        {{> mission-card/mission-card users=../users}}
+      {{/each}}
+    </div>
   </div>
 </div>

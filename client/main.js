@@ -8,6 +8,8 @@ TemplateRenderer.registerTemplate('text-box/text-box', require('../components/te
 TemplateRenderer.registerTemplate('milestone-badge/milestone-badge', require('../components/milestone-badge/milestone-badge.hbs'));
 TemplateRenderer.registerTemplate('add-milestones/add-milestones-row', require('../components/add-milestones/add-milestones-row.hbs'));
 
+ComponentFactory.registerComponent('dashboard', require('../views/dashboard/dashboard'));
+
 ComponentFactory.registerComponent('badge', require('../components/badge/badge'));
 ComponentFactory.registerComponent('badge-menu', require('../components/badge-menu/badge-menu'));
 ComponentFactory.registerComponent('text-box', require('../components/text-box/text-box'));

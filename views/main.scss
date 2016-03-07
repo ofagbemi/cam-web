@@ -1,5 +1,5 @@
-// Variables
 @import 'variables';
+@import 'animations';
 
 // Components
 @import '../components/badge/badge';
@@ -17,6 +17,8 @@
 @import '../components/nav/nav';
 @import '../components/settings-hamburger/settings-hamburger';
 @import '../components/activity/activity';
+@import '../components/agent/agent';
+@import '../components/loading/loading';
 
 // Views
 @import 'dashboard/dashboard';
