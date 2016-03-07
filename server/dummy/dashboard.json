@@ -1,4 +1,8 @@
 {
+  "badges": [
+    "anchor", "balloon", "bolt", "feather", "flag", "key",
+    "kite", "mountain", "paw", "plane", "rocket", "silly"
+  ],
   "users": [{
     "id": 0,
     "name": "Madelyn",

@@ -1,0 +1,10 @@
+<div data-component="badge-menu">
+  <h1>Select a badge</h1>
+  <div class="badges">
+    {{#each badges}}
+    <div class="badge-wrapper">
+      {{> badge/badge popover=false badge=this}}
+    </div>
+    {{/each}}
+  </div>
+</div>
