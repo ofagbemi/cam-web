@@ -1,4 +1,6 @@
 <div data-component="milestone-badge" style="
-     {{~#if imageUrl~}}
-      background-image:url('{{ imageUrl }}');
+     {{~#if imageUrls~}}
+       {{~#each imageUrls~}}
+       background-image:url('{{ this }}');
+       {{~/each~}}
      {{~/if}}"></div>
