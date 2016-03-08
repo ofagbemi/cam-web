@@ -1,63 +1,108 @@
 #dashboard {
 
-  > .loading-wrap {
-    display: none;
-  }
-
-  > .agent-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    opacity: 1;
-    transform: translate(0, 10px);
-    transition: transform 0.4s $out-bounce-bezier, opacity 0.2s ease-out;
-    transition-delay: 0.8s;
-  }
-
   > [data-component="button-group"] {
     margin: 30px 0 40px 0;
   }
 
-  > .mission-cards {
-    [data-component="mission-card"] {
-      margin-bottom: 24px;
+  > .sections {
+    position: relative;
+    > section.active-missions, section.completed-missions {
+      position: absolute;
+      top: 0;
       opacity: 1;
-      pointer-events: initial;
-      transform: translate(0, 0) scale(1);
+      transform: translate(0, 0);
       transition: transform 0.4s $out-bounce-bezier, opacity 0.2s ease-out;
     }
+    > section.active-missions {
 
-    > #active-missions {
-      > [data-component="mission-card"] {
-        transition-delay: $max-num-mission-cards * 0.1s;
-        // stagger transition
-        @for $i from 1 through ($max-num-mission-cards) {
-          &:nth-child(#{$i}) {
-            transition-delay: 0.1s * $i;
+      > .loading-wrap {
+        display: none;
+      }
+
+      > .agent-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        opacity: 1;
+        transform: translate(0, 10px);
+        transition: transform 0.4s $out-bounce-bezier, opacity 0.2s ease-out;
+        transition-delay: 0.8s;
+      }
+
+      > .mission-cards {
+        [data-component="mission-card"] {
+          margin-bottom: 24px;
+          opacity: 1;
+          pointer-events: initial;
+          transform: translate(0, 0) scale(1);
+          transition: transform 0.4s $out-bounce-bezier, opacity 0.2s ease-out;
+        }
+
+        > #active-missions {
+          > [data-component="mission-card"] {
+            transition-delay: $max-num-mission-cards * 0.1s;
+            // stagger transition
+            @for $i from 1 through ($max-num-mission-cards) {
+              &:nth-child(#{$i}) {
+                transition-delay: 0.1s * $i;
+              }
+            }
           }
+        }
+      }
+
+    }
+  }
+
+  &.loading {
+    > .sections {
+      > section.active-missions {
+        > .loading-wrap {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        > .agent-wrap {
+          pointer-events: none;
+          opacity: 0;
+          transform: translate(0, 40px);
+        }
+
+        [data-component="mission-card"] {
+          opacity: 0;
+          transform: translate(0, 100px) scale(0.8);
+          pointer-events: none;
         }
       }
     }
   }
 
-  &.loading {
-    > .loading-wrap {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+  &.active-missions {
+    >.sections {
+      > section.active-missions {
+        transition-delay: 0.5s;
+      }
 
-    > .agent-wrap {
-      pointer-events: none;
-      opacity: 0;
-      transform: translate(0, 40px);
+      > section.completed-missions {
+        opacity: 0;
+        transform: translate(100px, 0);
+        pointer-events: none;
+      }
     }
+  }
 
-    [data-component="mission-card"] {
-      opacity: 0;
-      transform: translate(0, 100px) scale(0.8);
-      pointer-events: none;
+  &.completed-missions {
+    > .sections {
+      > section.completed-missions {
+        transition-delay: 0.5s;
+      }
+      > section.active-missions {
+        opacity: 0;
+        transform: translate(-100px, 0);
+        pointer-events: none;
+      }
     }
   }
 }

@@ -1,0 +1,33 @@
+<div data-component="completed-mission-badge">
+
+  {{#xif assignedTo.length '===' 1}}
+  {{!-- Get the color of the single user --}}
+  {{#with (valueAt (valueAt 0 assignedTo) family)}}
+  <div class="badge" style="border-color:{{ color }};">
+  {{/with}}
+  {{ else }}
+  <div class="badge">
+  {{/xif}}
+
+    {{#each assignedTo}}
+
+    {{#with (valueAt this ../family)}}
+
+    {{!-- Only show the first three users --}}
+    {{#xif @index '<' 3}}
+    {{> user-badge/user-badge this}}
+    {{/xif}}
+
+    {{#xif @index '===' 3}}
+    <button class="extra-users">...</button>
+    {{/xif}}
+    {{/with}}
+
+    {{/each}}
+
+  {{!-- Closing tag for badge --}}
+  </div>
+
+
+  <h2 class="title">{{ title }}</h2>
+</div>

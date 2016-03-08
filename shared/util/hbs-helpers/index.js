@@ -1,3 +1,9 @@
+module.exports.valueAt = function(key, object) {
+  if (object && (key !== undefined)) {
+    return object[key];
+  }
+};
+
 exports.json = function(obj) {
   return JSON.stringify(obj);
 };
