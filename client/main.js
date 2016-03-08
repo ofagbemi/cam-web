@@ -34,6 +34,7 @@ ComponentFactory.registerComponent('progress-bar', require('../components/progre
 
 ComponentFactory.registerComponent('add-milestones', require('../components/add-milestones/add-milestones'));
 ComponentFactory.registerComponent('add-milestones-row', require('../components/add-milestones/add-milestones-row'));
+ComponentFactory.registerComponent('completed-milestones-row', require('../components/add-milestones/completed-milestones-row'));
 
 ComponentFactory.registerComponent('checkmark', require('../components/checkmark/checkmark'));
 ComponentFactory.registerComponent('user-badge', require('../components/user-badge/user-badge'));

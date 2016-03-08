@@ -17,12 +17,16 @@ MilestoneBage.prototype.init = function() {
   this.data = JSON.parse(this.$el.find('script.data').remove().html());
 
   this.$el.on('click', _.bind(this._handleClick, this));
+  this.$timesCompleted = this.$el.find('.times-completed');
 };
 
 MilestoneBage.prototype._handleClick = function() {
   if (this.$el.attr('data-gallery')) {
     this.$gallery = this._renderGalleryTemplate();
-    Lightbox.show(this.$gallery);
+    this.galleryComponent = ComponentFactory.getComponent(this.$gallery);
+    Lightbox.show(this.$gallery, _.bind(function() {
+      this.emit('show-gallery', this.galleryComponent);
+    }, this));
   }
 };
 
@@ -34,6 +38,22 @@ MilestoneBage.prototype._renderGalleryTemplate = function() {
     title: this.data.title,
     images: images
   });
+};
+
+MilestoneBage.prototype.setTimesCompleted = function(num) {
+  if (num > 0) {
+    this.$el.addClass('show-times-completed');
+  } else {
+    this.$el.removeClass('show-times-completed');
+    this.$el.css('background-image', '');
+  }
+
+  this.data.timesCompleted = num;
+  this.$timesCompleted.find('> span').text(num);
+};
+
+MilestoneBage.prototype.getTimesCompleted = function(num) {
+  return this.data.timesCompleted;
 };
 
 module.exports = MilestoneBage;

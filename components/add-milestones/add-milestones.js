@@ -11,18 +11,42 @@ function AddMilestones($el) {
 
 AddMilestones.prototype.init = function() {
 
+  if (this._init) { return; }
+  this._init = true;
+
+  this.data = JSON.parse(this.$el.find('script.data').remove().html());
+
   this.$activeRows = this.$el.find('.active > .active-rows');
+  this.$completedRows = this.$el.find('.completed > .completed-rows');
 
   this.activeMilestoneRows = [];
-  this.$el.find('[data-component="add-milestones-row"]').each(_.bind(function(index, el) {
-    var component = ComponentFactory.getComponent($(el));
+  this.$activeRows.find('[data-component="add-milestones-row"]').each(_.bind(function(index, el) {
+    var component = ComponentFactory.getComponent(el);
     this.activeMilestoneRows.push(component);
-    this._bindRowComponentListeners(component);
+    this._bindActiveRowComponentListeners(component);
   }, this));
 
+  this.completedMilestoneRows = [];
+  this.$completedRows.find('[data-component="completed-milestones-row"]').each(_.bind(function(index, el) {
+    var component = ComponentFactory.getComponent(el);
+    this.completedMilestoneRows.push(component);
+    this._bindCompletedRowComponentListeners(component);
+  }, this));
 };
 
-AddMilestones.prototype._bindRowComponentListeners = function(rowComponent) {
+AddMilestones.prototype._bindCompletedRowComponentListeners = function(rowComponent) {
+  rowComponent.on('redo', _.bind(this._handleRedo, this));
+};
+
+AddMilestones.prototype._handleRedo = function(imageUrl, component) {
+  this._addMilestoneComponent(component.data);
+  component.$el.addClass('hide');
+  setTimeout(function() {
+    component.$el.remove();
+  });
+};
+
+AddMilestones.prototype._bindActiveRowComponentListeners = function(rowComponent) {
   rowComponent.textBoxComponent.on('keyup', _.bind(this._handleKeyup, this));
   rowComponent.on('remove', _.bind(this._handleRemove, this));
 };
@@ -72,8 +96,34 @@ AddMilestones.prototype._addNewMilestoneComponent = function() {
 
   var rowComponent = ComponentFactory.getComponent($addMilestone);
   this.activeMilestoneRows.push(rowComponent);
-  this._bindRowComponentListeners(rowComponent);
+  this._bindActiveRowComponentListeners(rowComponent);
 };
+
+AddMilestones.prototype._addMilestoneComponent = function(data) {
+
+  data = _.clone(data);
+  _.defaults(data, {placeholder: 'Add a milestone'});
+
+  var existingActiveRow = _.find(this.activeMilestoneRows, function(row) {
+    return _.isEqual(row.data, data);
+  });
+
+  if (!existingActiveRow) {
+    var $addMilestone = TemplateRenderer
+      .renderTemplate('add-milestones/add-milestones-row', data)
+      .addClass('hide');
+
+    // flex reversed, so this'll put it at the top
+    this.$activeRows.append($addMilestone);
+    setTimeout(function() {
+      $addMilestone.removeClass('hide');
+    });
+
+    var rowComponent = ComponentFactory.getComponent($addMilestone);
+    this.activeMilestoneRows.unshift(rowComponent);
+    this._bindActiveRowComponentListeners(rowComponent);
+  }
+}
 
 AddMilestones.prototype.clear = function() {
   this.activeMilestoneRows = [];

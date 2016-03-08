@@ -1,5 +1,5 @@
 <div {{#unless title}}class="add"{{/unless}} data-component="add-milestones-row">
-  {{> milestone-badge/milestone-badge}}
+  {{> milestone-badge/milestone-badge showTimesCompleted=true}}
   {{> text-box/text-box placeholder="Add a milestone" value=title}}
 
   <div class="details">
@@ -37,4 +37,8 @@
     </span>
     <span class="remove-button" data-toggle="tooltip" data-placement="top" title="Remove"></span>
   </div>
+
+  <script type="application/json" class="data">
+    {{{json this}}}
+  </script>
 </div>

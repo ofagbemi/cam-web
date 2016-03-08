@@ -3,7 +3,7 @@
        {{~#each imageUrls~}}
        background-image:url('{{ this }}');
        {{~/each~}}
-     {{~/if}}" {{#if showTimesCompleted}}class="show-times-completed"{{/if}}>
+     {{~/if}}" {{#xif showTimesCompleted '&&' timesCompleted}}class="show-times-completed"{{/xif}}>
   <div class="times-completed">
     <span>{{timesCompleted}}</span>
   </div>

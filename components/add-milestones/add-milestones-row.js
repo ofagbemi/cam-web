@@ -14,7 +14,14 @@ inherits(AddMilestonesRow, EventEmitter);
 
 AddMilestonesRow.prototype.init = function() {
 
+  if (this._init) { return; }
+  this._init = true;
+
+  this.data = JSON.parse(this.$el.find('script.data').remove().html());
+
   this.textBoxComponent = ComponentFactory.getComponent(this.$el.find('[data-component="text-box"]'));
+  this.badgeComponent = ComponentFactory.getComponent(this.$el.find('[data-component="milestone-badge"]'));
+
   this.$dropdownToggle = this.$el.find('.dropdown-toggle');
   this.$dropdownMenu = this.$el.find('.dropdown-menu');
   this.$dropdownLabel = this.$el.find('.dropdown-label');
@@ -41,6 +48,15 @@ AddMilestonesRow.prototype._remove = function() {
   this.emit('remove', this);
 };
 
+AddMilestonesRow.prototype.setTimesCompleted = function(num) {
+  this.data.timesCompleted = num;
+  this.badgeComponent.setTimesCompleted(num);
+};
+
+AddMilestonesRow.prototype.getTimesCompleted = function() {
+  return this.data.timesCompleted;
+};
+
 AddMilestonesRow.prototype._handleDropdownItemClick = function(e) {
   var $prevSelected = this.$dropdownMenu.find('.selected');
 
@@ -58,6 +74,15 @@ AddMilestonesRow.prototype._handleDropdownItemClick = function(e) {
   } else {
     this.$dropdownLabel.html('times');
   }
+};
+
+AddMilestonesRow.prototype.setTimesRemaining = function(num) {
+  this.data.timesRemaining = num;
+  this.$dropdownMenu.find('[value="' + (this.data.timesCompleted + this.data.timesRemaining) + '"]').click();
+};
+
+AddMilestonesRow.prototype.getTimesRemaining = function() {
+  return this.data.timesRemaining;
 };
 
 module.exports = AddMilestonesRow;

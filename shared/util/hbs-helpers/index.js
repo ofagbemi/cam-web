@@ -36,6 +36,9 @@ exports.xif = function(l, op, r, options) {
     case '<':
       success = l < r;
       break;
+    case '&&':
+      success = l && r;
+      break;
     case 'contains':
       l = l || [];
       success = l.indexOf(r) !== -1;
