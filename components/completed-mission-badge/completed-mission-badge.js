@@ -18,12 +18,7 @@ CompletedMissionBadge.prototype.init = function() {
 
 CompletedMissionBadge.prototype._handleClick = function() {
   this.$gallery = this._renderGalleryTemplate();
-  this.galleryComponent = ComponentFactory.getComponent(this.$gallery);
-
-  Lightbox.show(this.$gallery, _.bind(function() {
-    this.galleryComponent.masonry();
-  }, this));
-  window.galleryComp = this.galleryComponent;
+  Lightbox.show(this.$gallery);
 };
 
 CompletedMissionBadge.prototype._renderGalleryTemplate = function() {
