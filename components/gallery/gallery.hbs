@@ -15,14 +15,15 @@
       <div class="main">
       </div>
       <div class="slide">
-
+        <div class="buttons">
+          <button class="back"></button>
+          <button class="forward"></button>
+        </div>
         <div class="slide-inner">
           {{#each images}}
           <div class="slide-item" data-image-url="{{ imageUrl }}" style="background-image:url('{{ imageUrl }}');"></div>
           {{/each}}
         </div>
-        <button class="back"></button>
-        <button class="forward"></button>
       </div>
     </section>
 

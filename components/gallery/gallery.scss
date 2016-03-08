@@ -89,12 +89,38 @@
         overflow: hidden;
         position: relative;
 
+        > .buttons {
+          display: flex;
+          align-items: center;
+
+          > button.back, > button.forward {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
+
+          > button.back {
+            background-image: url('/images/icons/back/back.svg');
+          }
+
+          > button.forward {
+            background-image: url('/images/icons/forward/forward.svg');
+            margin-left: auto;
+          }
+        }
+
         > .slide-inner {
           display: flex;
           align-items: center;
           transition: transform 0.4s $out-bounce-bezier;
 
           > .slide-item {
+            cursor: pointer;
             flex: 0 0 auto;
             margin: 10px;
             width: 130px;
@@ -105,25 +131,14 @@
             background-repeat: no-repeat;
             border-radius: 130px;
             box-shadow: 0 2px 4px 0 $shadow-color;
+            transform: scale(1);
+            transition: border-color 0.2s ease-in, transform 0.2s $out-bounce-bezier;
 
-            transition: border-color 0.2s ease-in;
-
-            &.selected {
+            &.selected, &:hover {
+              transform: scale(1.15);
               border-color: $action-color;
             }
           }
-        }
-
-        > button.back {
-          position: absolute;
-          left: 0;
-          top: 0;
-        }
-
-        > button.forward {
-          position: absolute;
-          right: 0;
-          top: 0;
         }
       }
     }

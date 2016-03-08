@@ -24,8 +24,8 @@ Gallery.prototype.init = function() {
 
   this.$slideInner.on('click', '.slide-item', _.bind(this._handleSlideItemClick, this));
 
-  this.$backButton = this.$slide.find('button.back');
-  this.$forwardButton = this.$slide.find('button.forward');
+  this.$backButton = this.$el.find('.buttons > button.back');
+  this.$forwardButton = this.$slide.find('.buttons > button.forward');
 
   this.$forwardButton.on('click', _.bind(this._handleForward, this));
   this.$backButton.on('click', _.bind(this._handleBackward, this));
