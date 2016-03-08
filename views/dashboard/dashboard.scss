@@ -9,6 +9,8 @@
     > section.active-missions, section.completed-missions {
       position: absolute;
       top: 0;
+      left: 0;
+      width: 100%;
       opacity: 1;
       transform: translate(0, 0);
       transition: transform 0.4s $out-bounce-bezier, opacity 0.2s ease-out;
@@ -52,6 +54,18 @@
         }
       }
 
+    }
+
+    > section.completed-missions {
+      > .mission-badges {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        [data-component="completed-mission-badge"] {
+          margin: 28px;
+        }
+      }
     }
   }
 

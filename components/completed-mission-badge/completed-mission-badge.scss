@@ -1,11 +1,11 @@
 [data-component="completed-mission-badge"] {
 
-  width: 180px;
+  width: 150px;
 
   > .badge {
     position: relative;
-    width: 180px;
-    height: 180px;
+    width: 150px;
+    height: 150px;
     border-radius: 180px;
     box-shadow: 0 2px 4px 0 $shadow-color;
     border: solid 10px white;
@@ -48,6 +48,7 @@
   }
 
   > h2.title {
+    margin-top: 20px;
     text-align: center;
   }
 }

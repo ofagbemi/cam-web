@@ -25,9 +25,11 @@
 
     </section>
     <section class="completed-missions">
-      {{#each missions.completed}}
-      {{> completed-mission-badge/completed-mission-badge this family=../users}}
-      {{/each}}
+      <div class="mission-badges">
+        {{#each missions.completed}}
+        {{> completed-mission-badge/completed-mission-badge this family=../users}}
+        {{/each}}
+      </div>
     </section>
   </div>
 </div>
