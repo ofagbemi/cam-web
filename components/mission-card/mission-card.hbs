@@ -7,7 +7,7 @@
     <div class="info">
       <div class="info-header">
         {{> text-box/text-box class="title" placeholder="Add a new mission" value=title}}
-        <span class="milestones-label">{{numMilestonesCompleted}}/{{milestones.length}} milestones completed</span>
+        <span class="milestones-label">{{ milestones.completed.length }}/{{math milestones.active.length '+' milestones.completed.length}} milestones completed</span>
       </div>
       {{> progress-bar/progress-bar this}}
       <div class="milestone-badges">

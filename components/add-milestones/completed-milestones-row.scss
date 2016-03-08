@@ -1,0 +1,17 @@
+[data-component="completed-milestones-row"] {
+  display: flex;
+  align-items: center;
+
+  > h2 {
+    font-size: 18px;
+    margin-left: 18px;
+    margin-right: 8px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  > button.redo {
+    margin-left: auto;
+  }
+}

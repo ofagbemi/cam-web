@@ -1,27 +1,40 @@
-<div {{#unless name}}class="add"{{/unless}} data-component="add-milestones-row">
+<div {{#unless title}}class="add"{{/unless}} data-component="add-milestones-row">
   {{> milestone-badge/milestone-badge}}
-  {{> text-box/text-box placeholder="Add a milestone" value=name}}
+  {{> text-box/text-box placeholder="Add a milestone" value=title}}
 
   <div class="details">
     <div class="dropdown">
       <button class="dropdown-toggle" data-toggle="dropdown">
         <span class="caret"></span>
-        <span class="text">1</span>
+        <span class="text">
+          {{#xif (math timesCompleted '+' timesRemaining) '>' 0}}
+          {{math timesCompleted '+' timesRemaining}}
+          {{ else }}
+          1
+          {{/xif}}
+        </span>
       </button>
       <ul class="dropdown-menu">
-        <li value="1" class="selected">1</li>
-        <li value="2">2</li>
-        <li value="3">3</li>
-        <li value="4">4</li>
-        <li value="5">5</li>
-        <li value="6">6</li>
-        <li value="7">7</li>
-        <li value="8">8</li>
-        <li value="9">9</li>
-        <li value="10">10</li>
+        <li value="1"{{#xif (math timesCompleted '+' timesRemaining) '===' 1}} class="selected"{{/xif}}>1</li>
+        <li value="2" {{#xif (math timesCompleted '+' timesRemaining) '===' 2}} class="selected"{{/xif}}>2</li>
+        <li value="3" {{#xif (math timesCompleted '+' timesRemaining) '===' 3}} class="selected"{{/xif}}>3</li>
+        <li value="4" {{#xif (math timesCompleted '+' timesRemaining) '===' 4}} class="selected"{{/xif}}>4</li>
+        <li value="5" {{#xif (math timesCompleted '+' timesRemaining) '===' 5}} class="selected"{{/xif}}>5</li>
+        <li value="6" {{#xif (math timesCompleted '+' timesRemaining) '===' 6}} class="selected"{{/xif}}>6</li>
+        <li value="7" {{#xif (math timesCompleted '+' timesRemaining) '===' 7}} class="selected"{{/xif}}>7</li>
+        <li value="8" {{#xif (math timesCompleted '+' timesRemaining) '===' 8}} class="selected"{{/xif}}>8</li>
+        <li value="9" {{#xif (math timesCompleted '+' timesRemaining) '===' 9}} class="selected"{{/xif}}>9</li>
+        <li value="10" {{#xif (math timesCompleted '+' timesRemaining) '===' 10}} class="selected"{{/xif}}>10</li>
       </ul>
     </div>
-    <span class="dropdown-label">time</span>
+    <span class="dropdown-label">
+      {{!-- > 1 here because 0 indicates that this is empty, so dropdown defaults to 1 --}}
+      {{#xif (math timesCompleted '+' timesRemaining) '>' 1}}
+      times
+      {{ else }}
+      time
+      {{/xif}}
+    </span>
     <span class="remove-button" data-toggle="tooltip" data-placement="top" title="Remove"></span>
   </div>
 </div>

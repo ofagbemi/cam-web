@@ -30,7 +30,7 @@ CompletedMissionBadge.prototype._renderGalleryTemplate = function() {
   var images = [];
 
   var that = this;
-  _.each(this.data.milestones, function(milestone) {
+  _.each(this.data.milestones.completed, function(milestone) {
     _.each(milestone.imageUrls, function(url) {
       images.push({
         imageUrl: url,

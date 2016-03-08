@@ -1,6 +1,14 @@
-<div data-component="milestone-badge" style="
+<div data-component="milestone-badge"{{#if gallery}} data-gallery="true"{{/if}} style="
      {{~#if imageUrls~}}
        {{~#each imageUrls~}}
        background-image:url('{{ this }}');
        {{~/each~}}
-     {{~/if}}"></div>
+     {{~/if}}" {{#if showTimesCompleted}}class="show-times-completed"{{/if}}>
+  <div class="times-completed">
+    <span>{{timesCompleted}}</span>
+  </div>
+
+  <script type="application/json" class="data">
+    {{{json this}}}
+  </script>
+</div>

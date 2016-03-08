@@ -1,3 +1,19 @@
+/**
+ * Taken from http://jsfiddle.net/mpetrovich/wMmHS/
+ */
+exports.math = function(lvalue, operator, rvalue, options) {
+  lvalue = parseFloat(lvalue) || 0;
+  rvalue = parseFloat(rvalue) || 0;
+
+  return {
+    "+": lvalue + rvalue,
+    "-": lvalue - rvalue,
+    "*": lvalue * rvalue,
+    "/": lvalue / rvalue,
+    "%": lvalue % rvalue
+  }[operator];
+};
+
 exports.valueAt = function(key, object) {
   if (object && (key !== undefined)) {
     return object[key];

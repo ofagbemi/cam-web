@@ -22,6 +22,7 @@ TemplateRenderer.registerTemplate('add-milestones/add-milestones-row', require('
 
 ComponentFactory.registerComponent('dashboard', require('../views/dashboard/dashboard'));
 
+ComponentFactory.registerComponent('milestone-badge', require('../components/milestone-badge/milestone-badge'));
 ComponentFactory.registerComponent('gallery', require('../components/gallery/gallery'));
 ComponentFactory.registerComponent('badge', require('../components/badge/badge'));
 ComponentFactory.registerComponent('badge-menu', require('../components/badge-menu/badge-menu'));

@@ -20,12 +20,12 @@ Gallery.prototype.init = function() {
   this.$theater = this.$el.find('.theater');
   this.$theaterMain = this.$theater.find('.main');
   this.$slide = this.$theater.find('.slide');
-  this.$slideInner = this.$slide.find('.slide-inner');
+  this.$slideInner = this.$slide.find('> .slide-inner-wrap > .slide-inner');
 
   this.$slideInner.on('click', '.slide-item', _.bind(this._handleSlideItemClick, this));
 
-  this.$backButton = this.$el.find('.buttons > button.back');
-  this.$forwardButton = this.$slide.find('.buttons > button.forward');
+  this.$backButton = this.$slide.find('> button.back');
+  this.$forwardButton = this.$slide.find('> button.forward');
 
   this.$forwardButton.on('click', _.bind(this._handleForward, this));
   this.$backButton.on('click', _.bind(this._handleBackward, this));
@@ -61,6 +61,10 @@ Gallery.prototype._handleForward = function() {
   this.position += 2;
   if (this.position > this.data.images.length - 2) {
     this.position = this.data.images.length - 2;
+  }
+  // post check to make sure we didn't go below 0
+  if (this.position < 0) {
+    this.position = 0;
   }
 
   var translate = this.getTranslate(this.position)
@@ -115,10 +119,7 @@ Gallery.prototype._handleGridItemClick = function(e) {
 };
 
 Gallery.prototype._setMainTheaterImage = function(imageUrl) {
-  var $img = $('<img/>', {
-    src: imageUrl
-  });
-  this.$theaterMain.empty().append($img);
+  this.$theaterMain.find('> .image').css('background-image', 'url(\'' + imageUrl + '\')');
 };
 
 module.exports = Gallery;

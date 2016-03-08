@@ -1,7 +1,9 @@
 <div data-component="gallery" class="theater-mode">
 
   <header>
-    {{> badge/badge badge=badge}}
+    {{#if badge}}
+      {{> badge/badge badge=badge}}
+    {{/if}}
     <h1 class="title">{{ title }}</h1>
   </header>
   <div class="content">
@@ -13,17 +15,22 @@
 
     <section class="theater">
       <div class="main">
+        <div class="image"></div>
+
+        {{!-- Not super clean, but w/e --}}
+        <button class="redo">Ask to redo</button>
+
       </div>
       <div class="slide">
-        <div class="buttons">
-          <button class="back"></button>
-          <button class="forward"></button>
+        <button class="back"></button>
+        <div class="slide-inner-wrap">
+          <div class="slide-inner">
+            {{#each images}}
+            <div class="slide-item" data-image-url="{{ imageUrl }}" style="background-image:url('{{ imageUrl }}');"></div>
+            {{/each}}
+          </div>
         </div>
-        <div class="slide-inner">
-          {{#each images}}
-          <div class="slide-item" data-image-url="{{ imageUrl }}" style="background-image:url('{{ imageUrl }}');"></div>
-          {{/each}}
-        </div>
+        <button class="forward"></button>
       </div>
     </section>
 

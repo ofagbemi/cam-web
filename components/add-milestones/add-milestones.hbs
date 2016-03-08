@@ -1,8 +1,20 @@
 <div data-component="add-milestones">
-  <div class="rows">
-    {{> add-milestones/add-milestones-row}}
-    {{#eachReverse milestones}}
-      {{> add-milestones/add-milestones-row}}
-    {{/eachReverse}}
+  <div class="active">
+    <h1>Active milestones</h1>
+    <div class="active-rows">
+      {{> add-milestones/add-milestones-row null}}
+      {{#eachReverse milestones.active}}
+        {{> add-milestones/add-milestones-row}}
+      {{/eachReverse}}
+    </div>
+  </div>
+
+  <div class="completed">
+    <h1>Completed milestones</h1>
+    <div class="completed-rows">
+      {{#eachReverse milestones.completed}}
+      {{> add-milestones/completed-milestones-row}}
+      {{/eachReverse}}
+    </div>
   </div>
 </div>

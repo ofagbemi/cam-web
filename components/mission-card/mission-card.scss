@@ -11,7 +11,7 @@
   transition: transform 0.2s $out-bounce-bezier, border-color 0.2s ease-out;
 
 
-  &:hover {
+  &:hover:not(.active) {
     transform: scale(1.05);
     border-color: $action-color;
   }

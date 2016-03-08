@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 18px;
+    margin-bottom: 24px;
 
     > [data-component="badge"] {
       width: 44px;
@@ -43,7 +43,6 @@
       position: absolute;
       top: 0;
       width: 100%;
-      height: 100%;
       transition: translate 0.4s $out-bounce-bezier, opacity 0.2s ease-out;
     }
   }
@@ -73,70 +72,118 @@
 
       > .main {
         display: flex;
-        align-items: center;
         justify-content: center;
+        position: relative;
 
-        height: 480px;
+        height: 520px;
 
-        > img {
-          max-width: 100%;
-          max-height: 100%;
+        > .image {
+          width: 520px;
+          height: 520px;
+
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+
+        &:hover {
+          > button.redo {
+            opacity: 1;
+          }
+        }
+
+        > button.redo {
+          position: absolute;
+          top: 18px;
+          right: 18px;
+          font-size: 24px;
+          color: white;
+          background-color: $destructive-color;
+          cursor: pointer;
+          border: none;
+          padding: 9px 26px;
+          border-radius: 4px;
+
+          opacity: 0;
+          transition: opacity 0.2s ease-out;
+        }
+      }
+
+      &:hover {
+        > .slide {
+          transform: translate(0, 0);
+          opacity: 1;
+          pointer-events: initial;
+
+          transition-timing-function: $out-bounce-bezier;
         }
       }
 
       > .slide {
 
         overflow: hidden;
-        position: relative;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding-bottom: 11px;
+        display: flex;
+        align-items: center;
 
-        > .buttons {
-          display: flex;
-          align-items: center;
+        transform: translate(0, 50%);;
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.4s $in-out-bounce-bezier-2, opacity 0.2s ease-out;
 
-          > button.back, > button.forward {
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-            background-color: transparent;
-            border: none;
-            background-position: center;
-            background-size: contain;
-            background-repeat: no-repeat;
-          }
-
-          > button.back {
-            background-image: url('/images/icons/back/back.svg');
-          }
-
-          > button.forward {
-            background-image: url('/images/icons/forward/forward.svg');
-            margin-left: auto;
-          }
+        > button.back, > button.forward {
+          width: 40px;
+          height: 40px;
+          cursor: pointer;
+          background-color: transparent;
+          border: none;
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
         }
 
-        > .slide-inner {
-          display: flex;
-          align-items: center;
-          transition: transform 0.4s $out-bounce-bezier;
+        > button.back {
+          margin-right: 18px;
+          background-image: url('/images/icons/back/back.svg');
+        }
 
-          > .slide-item {
-            cursor: pointer;
-            flex: 0 0 auto;
-            margin: 10px;
-            width: 130px;
-            height: 130px;
-            border: solid 8px white;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            border-radius: 130px;
-            box-shadow: 0 2px 4px 0 $shadow-color;
-            transform: scale(1);
-            transition: border-color 0.2s ease-in, transform 0.2s $out-bounce-bezier;
+        > button.forward {
+          background-image: url('/images/icons/forward/forward.svg');
+          margin-left: 18px;
+        }
 
-            &.selected, &:hover {
-              transform: scale(1.15);
-              border-color: $action-color;
+        > .slide-inner-wrap {
+          flex: 1 0 auto;
+          overflow: hidden;
+
+           > .slide-inner {
+            display: flex;
+            align-items: center;
+            transition: transform 0.4s $out-bounce-bezier;
+
+            > .slide-item {
+              cursor: pointer;
+              flex: 0 0 auto;
+              margin: 10px;
+              width: 50px;
+              height: 50px;
+              border: solid 4px white;
+              background-size: cover;
+              background-position: center;
+              background-repeat: no-repeat;
+              border-radius: 130px;
+              box-shadow: 0 2px 4px 0 $shadow-color;
+              transform: scale(1);
+              transition: border-color 0.2s ease-in, transform 0.2s $out-bounce-bezier;
+
+              &.selected, &:hover {
+                transform: scale(1.15);
+                border-color: $action-color;
+              }
             }
           }
         }

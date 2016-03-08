@@ -11,12 +11,12 @@ function AddMilestones($el) {
 
 AddMilestones.prototype.init = function() {
 
-  this.$rows = this.$el.find('.rows');
+  this.$activeRows = this.$el.find('.active > .active-rows');
 
-  this.milestoneRows = [];
+  this.activeMilestoneRows = [];
   this.$el.find('[data-component="add-milestones-row"]').each(_.bind(function(index, el) {
     var component = ComponentFactory.getComponent($(el));
-    this.milestoneRows.push(component);
+    this.activeMilestoneRows.push(component);
     this._bindRowComponentListeners(component);
   }, this));
 
@@ -32,7 +32,7 @@ AddMilestones.prototype._handleKeyup = function(e, textBoxComponent) {
   // its click event if there isn't an "Add new milestone" row, then we should
   //  just ignore the keypress
   if (e.keyCode === 13) {
-    var lastRow = _.last(this.milestoneRows);
+    var lastRow = _.last(this.activeMilestoneRows);
     if (!lastRow.$el.hasClass('add')) { return; }
 
     lastRow.$el.click();
@@ -41,20 +41,20 @@ AddMilestones.prototype._handleKeyup = function(e, textBoxComponent) {
 
   // if this is the last row, then typing in it should
   // add a new "Add new milestone" row
-  if (textBoxComponent === _.last(this.milestoneRows).textBoxComponent) {
+  if (textBoxComponent === _.last(this.activeMilestoneRows).textBoxComponent) {
     this._addNewMilestoneComponent();
   }
 };
 
 AddMilestones.prototype._handleRemove = function(component) {
-  var index = this.milestoneRows.indexOf(component);
+  var index = this.activeMilestoneRows.indexOf(component);
   if (index > -1) {
-    this.milestoneRows.splice(index, 1);
+    this.activeMilestoneRows.splice(index, 1);
   }
 
   // if there are no rows remaining, go ahead and
   // add a new addMilestone row
-  if (this.milestoneRows.length === 0) {
+  if (this.activeMilestoneRows.length === 0) {
     this._addNewMilestoneComponent();
   }
 };
@@ -65,20 +65,19 @@ AddMilestones.prototype._addNewMilestoneComponent = function() {
   }).addClass('hide');
 
   // flex reversed to fix dropdown menu positioning
-  this.$rows.prepend($addMilestone);
+  this.$activeRows.prepend($addMilestone);
   setTimeout(function() {
     $addMilestone.removeClass('hide');
   });
 
   var rowComponent = ComponentFactory.getComponent($addMilestone);
-  this.milestoneRows.push(rowComponent);
+  this.activeMilestoneRows.push(rowComponent);
   this._bindRowComponentListeners(rowComponent);
 };
 
 AddMilestones.prototype.clear = function() {
-  this.milestoneRows = [];
-  this.$rows.empty();
-
+  this.activeMilestoneRows = [];
+  this.$activeRows.empty();
   this._addNewMilestoneComponent();
 };
 

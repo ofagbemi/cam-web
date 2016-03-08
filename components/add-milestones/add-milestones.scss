@@ -1,16 +1,27 @@
 [data-component="add-milestones"] {
-  > .rows {
-    display: flex;
-    flex-direction: column-reverse; // to allow dropdown menus to appear over lower elements
+  > .active, > .completed {
 
-    [data-component="add-milestones-row"] {
-      margin-bottom: 11px;
+    &.active {
+      margin-bottom: 18px;
+    }
 
-      transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+    > h1 {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
 
-      &.hide {
-        opacity: 0;
-        transform: translate(-40px, 0);
+    > .active-rows, > .completed-rows {
+      display: flex;
+      flex-direction: column-reverse; // to allow dropdown menus to appear over lower elements
+      > [data-component="add-milestones-row"], [data-component="completed-milestones-row"] {
+        margin-bottom: 11px;
+
+        transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+
+        &.hide {
+          opacity: 0;
+          transform: translate(-40px, 0);
+        }
       }
     }
   }
