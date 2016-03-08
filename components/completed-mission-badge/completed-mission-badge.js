@@ -40,6 +40,8 @@ CompletedMissionBadge.prototype._renderGalleryTemplate = function() {
   });
 
   return TemplateRenderer.renderTemplate('gallery/gallery', {
+    badge: this.data.badge,
+    title: this.data.title,
     images: images
   });
 };

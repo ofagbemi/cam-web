@@ -92,30 +92,29 @@ Gallery.prototype._handleBackward = function() {
 
 Gallery.prototype._handleSlideItemClick = function(e) {
   var $slideItem = $(e.target).closest('.slide-item');
+
+  var $selectedEl = this.$slideInner.find('.slide-item.selected');
+
+  if ($selectedEl.get(0) === $slideItem.get(0)) { return; }
+
+  $selectedEl.removeClass('selected');
+  $slideItem.addClass('selected');
   var imageUrl = $slideItem.attr('data-image-url');
   this._setMainTheaterImage(imageUrl);
 };
 
 Gallery.prototype._handleGridItemClick = function(e) {
-  console.log('hi');
   var $gridItem = $(e.target).closest('.grid-item');
   var imageUrl = $gridItem.attr('data-image-url');
   this.$el.addClass('theater-mode');
 
-  console.log(imageUrl);
-
   this.$slideInner.find('.slide-item[data-image-url="' + imageUrl + '"]').click();
-
-//  var $slideItem = $(e.target).closest('.slide-item');
-//  var imageUrl = $slideItem.attr('data-image-url');
-//  this._setMainTheaterImage(imageUrl);
 };
 
 Gallery.prototype._setMainTheaterImage = function(imageUrl) {
   var $img = $('<img/>', {
     src: imageUrl
   });
-  console.log($img.get(0));
   this.$theaterMain.empty().append($img);
 };
 
