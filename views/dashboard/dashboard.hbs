@@ -1,23 +1,35 @@
-<div id="dashboard" data-component="dashboard" class="loading">
+<div id="dashboard" data-component="dashboard" class="loading active-missions">
   <div data-component="button-group">
-    <button class="active">Active Missions</button>
-    <button>Completed Missions</button>
+    <button class="active active-missions">Active Missions</button>
+    <button class="completed-missions">Completed Missions</button>
   </div>
 
-  <div class="loading-wrap">
-    {{> loading/loading}}
-  </div>
+  <div class="sections">
+    <section class="active-missions">
+      <div class="loading-wrap">
+        {{> loading/loading}}
+      </div>
 
-  <div class="agent-wrap">
-    {{> agent/agent}}
-  </div>
+      <div class="agent-wrap">
+        {{> agent/agent}}
+      </div>
 
-  <div class="mission-cards">
-    {{> mission-card/mission-card class="create"}}
-    <div id="active-missions">
-      {{#each missions.active}}
-        {{> mission-card/mission-card users=../users}}
-      {{/each}}
-    </div>
+      <div class="mission-cards">
+        {{> mission-card/mission-card class="create"}}
+        <div id="active-missions">
+          {{#each missions.active}}
+            {{> mission-card/mission-card users=../users}}
+          {{/each}}
+        </div>
+      </div>
+
+    </section>
+    <section class="completed-missions">
+      <div class="mission-badges">
+        {{#each missions.completed}}
+        {{> completed-mission-badge/completed-mission-badge this family=../users}}
+        {{/each}}
+      </div>
+    </section>
   </div>
 </div>

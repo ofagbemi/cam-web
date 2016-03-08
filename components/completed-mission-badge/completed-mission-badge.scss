@@ -1,0 +1,60 @@
+[data-component="completed-mission-badge"] {
+
+  width: 150px;
+
+  > .badge {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 180px;
+    box-shadow: 0 2px 4px 0 $shadow-color;
+    border: solid 10px white;
+    transition: transform 0.2s $out-bounce-bezier;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.15);
+    }
+
+
+    > [data-component="user-badge"], > button.extra-users {
+      box-shadow: 0 2px 4px 0 $shadow-color;
+    }
+
+    > [data-component="user-badge"] {
+
+      position: absolute;
+
+      &:first-child {
+        bottom: -20px;
+        right: -20px;
+      }
+
+      &:nth-child(2) {
+        bottom: -20px;
+        left: -20px;
+      }
+
+      &:nth-child(3) {
+        top: -20px;
+        left: -20px;
+      }
+    }
+
+    > button.extra-users {
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      width: 60px;
+      height: 60px;
+      border-radius: 60px;
+      background-color: white;
+      border: none;
+    }
+  }
+
+  > h2.title {
+    margin-top: 20px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,42 @@
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  padding-top: 24px;
+  display: none;
+
+  [data-component="close"] {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+  }
+
+  &.show {
+    display: flex;
+    justify-content: center;
+
+    > .content.show {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+
+  > .content {
+    overflow: scroll;
+    position: relative;
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    > * {
+      width: 80%;
+    }
+
+    opacity: 0;
+    transform: translate(0, 80px);
+    transition: transform 0.4s $out-bounce-bezier, opacity 0.2s ease-out;
+  }
+}

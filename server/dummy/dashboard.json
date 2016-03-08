@@ -39,7 +39,7 @@
           "timesRemaining": 0,
           "imageUrls": ["/images/demo/milestones/dog/breed.jpg"],
           "userIds": [2]
-        }, 
+        },
         {
           "name": "Learn what dogs can/can't eat",
           "timesCompleted": 1,
@@ -75,7 +75,7 @@
           "imageUrls": [],
           "userIds": []
         }]
-     }, 
+     },
      {
         "title": "Become a scientist",
         "numMilestonesCompleted": 5,
@@ -88,7 +88,7 @@
           "timesRemaining": 0,
           "imageUrls": ["/images/demo/milestones/scientist/volcano.jpg"],
           "userIds": [0]
-        }, 
+        },
         {
           "name": "Try the diet coke & mentos experiment",
           "timesCompleted": 1,
@@ -144,42 +144,42 @@
           "timesRemaining": 1,
           "imageUrls": [],
           "userIds": []
-        }, 
+        },
         {
           "name": "Have an Italian pizza",
           "timesCompleted": 2,
           "timesRemaining": 0,
           "imageUrls": ["/images/demo/milestones/florence/pizza1.jpeg", "/images/demo/milestones/florence/pizza2.jpg"],
           "userIds": [0, 2]
-        }, 
+        },
         {
           "name": "Order gelato in Italian",
           "timesCompleted": 1,
           "timesRemaining": 0,
           "imageUrls": ["/images/demo/milestones/florence/gelato.jpg"],
           "userIds": [2]
-        }, 
+        },
         {
           "name": "Go to the top of the Duomo",
           "timesCompleted": 0,
           "timesRemaining": 1,
           "imageUrls": [],
           "userIds": []
-        }, 
+        },
         {
           "name": "Rub a cinghiale statue's nose",
           "timesCompleted": 1,
           "timesRemaining": 0,
           "imageUrls": ["/images/demo/milestones/florence/cinghiale.jpg"],
           "userIds": [0]
-        }, 
+        },
         {
           "name": "Feed the pigeons",
           "timesCompleted": 0,
           "timesRemaining": 1,
           "imageUrls": [],
           "userIds": []
-        }, 
+        },
         {
           "name": "Choose a favorite ponte",
           "timesCompleted": 0,
@@ -200,7 +200,7 @@
           "timesRemaining": 3,
           "imageUrls": ["/images/demo/milestones/dinosaur/velociraptor.jpg", "/images/demo/milestones/dinosaur/trex.jpg"],
           "userIds": [2, 0]
-        }, 
+        },
         {
           "name": "Invent a prehistoric creature",
           "timesCompleted": 0,
@@ -229,7 +229,7 @@
           "imageUrls": ["/images/demo/milestones/dinosaur/digsite.jpg"],
           "userIds": [0]
         }]
-     }, 
+     },
      {
         "title": "Become an engineer",
         "numMilestonesCompleted": 3,
@@ -242,7 +242,7 @@
           "timesRemaining": 1,
           "imageUrls": [],
           "userIds": []
-        }, 
+        },
         {
           "name": "Build a straw boat",
           "timesCompleted": 1,
@@ -284,7 +284,7 @@
           "timesRemaining": 0,
           "imageUrls": ["/images/demo/milestones/teach/egypt.jpg", "/images/demo/milestones/teach/pirates.jpg"],
           "userIds": [0, 2]
-        }, 
+        },
         {
           "name": "Read a book",
           "timesCompleted": 2,
@@ -319,7 +319,7 @@
           "timesRemaining": 0,
           "imageUrls": ["/images/demo/milestones/film/stand.jpg"],
           "userIds": [0]
-        }, 
+        },
         {
           "name": "Storyboard a stop animation film",
           "timesCompleted": 1,
@@ -361,7 +361,7 @@
           "timesRemaining": 0,
           "imageUrls": ["/images/demo/milestones/imagine/civilization.jpg"],
           "userIds": [2]
-        }, 
+        },
         {
           "name": "Write a story",
           "timesCompleted": 0,
@@ -390,7 +390,7 @@
         "numMilestonesCompleted": 8,
         "assignedTo": [0, 1, 2, 3],
         "badge": "mountain",
-        "main": "/images/demo/milestones/camp/main.jpg",
+        "main": "/images/demo/milestones/camp/fish.jpg",
         "milestones": [
         {
           "name": "Learn how to set up a tent",
@@ -398,7 +398,7 @@
           "timesRemaining": 0,
           "imageUrls": ["/images/demo/milestones/camp/tent.jpg"],
           "userIds": [2]
-        }, 
+        },
         {
           "name": "Pick a park",
           "timesCompleted": 1,
@@ -448,7 +448,7 @@
           "timesRemaining": 0,
           "imageUrls": ["/images/demo/milestones/prank/coin.jpg"],
           "userIds": [0, 2]
-        }, 
+        },
         {
           "name": "Fake something gross",
           "timesCompleted": 1,
@@ -484,7 +484,7 @@
           "timesRemaining": 0,
           "imageUrls": ["/images/demo/milestones/pasta/set.jpg"],
           "userIds": [2]
-        }, 
+        },
         {
           "name": "Learn about the parts of a healthy meal",
           "timesCompleted": 1,
@@ -527,7 +527,7 @@
           "timesRemaining": 0,
           "imageUrls": ["/images/demo/milestones/game/settlers.jpg"],
           "userIds": [1]
-        }, 
+        },
         {
           "name": "Master Apples to Apples",
           "timesCompleted": 1,
@@ -570,7 +570,7 @@
           "timesRemaining": 0,
           "imageUrls": ["/images/demo/milestones/spy/scytale.jpg"],
           "userIds": [2]
-        }, 
+        },
         {
           "name": "Make a cipher",
           "timesCompleted": 1,
@@ -599,7 +599,7 @@
           "timesRemaining": 0,
           "imageUrls": ["/images/demo/milestones/fair/choose.jpg"],
           "userIds": [0, 2]
-        }, 
+        },
         {
           "name": "Do the experiment",
           "timesCompleted": 2,
@@ -628,7 +628,7 @@
           "timesRemaining": 0,
           "imageUrls": ["/images/demo/milestones/music/music1.jpg", "/images/demo/milestones/music/music2.jpg", "/images/demo/milestones/music/music3.jpg"],
           "userIds": [2]
-        }, 
+        },
         {
           "name": "Do a practice recital for Nana",
           "timesCompleted": 2,
@@ -650,7 +650,7 @@
           "timesRemaining": 0,
           "imageUrls": ["/images/demo/milestones/business/lemons.jpg"],
           "userIds": [2]
-        }, 
+        },
         {
           "name": "Design a company name and logo",
           "timesCompleted": 1,

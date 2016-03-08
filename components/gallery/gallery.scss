@@ -1,0 +1,146 @@
+[data-component="gallery"] {
+
+  > header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+
+    > [data-component="badge"] {
+      width: 44px;
+      height: 44px;
+      border-width: 4px;
+      margin-right: 11px;
+    }
+
+    > h1.title {
+      color: white;
+      text-shadow: 0 2px 2px $shadow-color;
+    }
+  }
+
+  > .content {
+    position: relative;
+
+    > .grid {
+      > .grid-item {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        width: 130px;
+        height: 130px;
+        margin: 10px;
+        background: white;
+
+        &.large {
+          width: 280px;
+          height: 280px;
+        }
+      }
+    }
+    > section.theater, > .grid {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      transition: translate 0.4s $out-bounce-bezier, opacity 0.2s ease-out;
+    }
+  }
+
+  &.theater-mode {
+    > .content {
+      > .grid {
+        opacity: 0;
+        transform: translate(0, -40px);
+        pointer-events: none;
+      }
+
+      > section.theater {
+        opacity: 1;
+        transform: translate(0, 0);
+        transition-delay: 0.6s;
+        pointer-events: initial;
+      }
+    }
+  }
+
+  > .content {
+    > section.theater {
+      opacity: 0;
+      transform: translate(0, 40px);
+      pointer-events: none;
+
+      > .main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 480px;
+
+        > img {
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+
+      > .slide {
+
+        overflow: hidden;
+        position: relative;
+
+        > .buttons {
+          display: flex;
+          align-items: center;
+
+          > button.back, > button.forward {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
+
+          > button.back {
+            background-image: url('/images/icons/back/back.svg');
+          }
+
+          > button.forward {
+            background-image: url('/images/icons/forward/forward.svg');
+            margin-left: auto;
+          }
+        }
+
+        > .slide-inner {
+          display: flex;
+          align-items: center;
+          transition: transform 0.4s $out-bounce-bezier;
+
+          > .slide-item {
+            cursor: pointer;
+            flex: 0 0 auto;
+            margin: 10px;
+            width: 130px;
+            height: 130px;
+            border: solid 8px white;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 130px;
+            box-shadow: 0 2px 4px 0 $shadow-color;
+            transform: scale(1);
+            transition: border-color 0.2s ease-in, transform 0.2s $out-bounce-bezier;
+
+            &.selected, &:hover {
+              transform: scale(1.15);
+              border-color: $action-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -6,8 +6,15 @@
   background-color: white;
   box-shadow: 0 2px 4px 0 $shadow-color;
   border-radius: 11px;
-
+  border: solid 2px transparent;
   position: relative;
+  transition: transform 0.2s $out-bounce-bezier, border-color 0.2s ease-out;
+
+
+  &:hover {
+    transform: scale(1.05);
+    border-color: $action-color;
+  }
 
   > [data-component="close"] {
     cursor: pointer;
