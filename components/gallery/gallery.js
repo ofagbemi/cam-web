@@ -137,6 +137,9 @@ Gallery.prototype._translateTo = function(position) {
 };
 
 Gallery.prototype._handleRedo = function() {
+  if (this._redoing) { return; }
+  this._redoing = true;
+
   var position = this._position;
 
   var $slideItem = $(this.$slideItems.get(position));
@@ -159,6 +162,10 @@ Gallery.prototype._handleRedo = function() {
     // the item to the right is now at the old position
     this.selectSlideItem(position);
   }
+
+  setTimeout(_.bind(function() {
+    this._redoing = false;
+  }, this), 800);
 };
 
 module.exports = Gallery;
