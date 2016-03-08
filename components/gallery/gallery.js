@@ -1,12 +1,16 @@
 var _ = require('underscore');
 var $ = require('jquery');
+var EventEmitter = require('events').EventEmitter;
+var inherits = require('inherits');
 
 var PROPS = ['-webkit-transform', '-ms-transform', 'transform'];
 var TRANSITION_END = 'transitionend webkitTransitionEnd oTransitionEnd';
 
 function Gallery($el) {
+  EventEmitter.call(this);
   this.$el = $el;
 }
+inherits(Gallery, EventEmitter);
 
 Gallery.prototype.init = function() {
   if (this._init) { return; }
@@ -33,6 +37,9 @@ Gallery.prototype.init = function() {
 
   this.$forwardButton.on('click', _.bind(this._handleForward, this));
   this.$backButton.on('click', _.bind(this._handleBackward, this));
+
+  this.$askToRedoButton = this.$theaterMain.find('button.redo');
+  this.$askToRedoButton.on('click', _.bind(this._handleRedo, this));
 
   // select the first slide item
   this.selectSlideItem(0);
@@ -107,6 +114,11 @@ Gallery.prototype._setMainTheaterImage = function(imageUrl) {
   this.$theaterMain.find('> .image').css('background-image', 'url(\'' + imageUrl + '\')');
 };
 
+Gallery.prototype._clearMainTheaterImage = function() {
+  this.$theaterMain.find('> .image').css('background-image', 'none');
+  this.$theaterMain.addClass('empty');
+}
+
 Gallery.prototype._translateTo = function(position) {
   if (this._transitioning) { return; }
   this._transitioning = true;
@@ -122,6 +134,31 @@ Gallery.prototype._translateTo = function(position) {
   setTimeout(_.bind(function() {
     this._transitioning = false;
   }, this), 600);
+};
+
+Gallery.prototype._handleRedo = function() {
+  var position = this._position;
+
+  var $slideItem = $(this.$slideItems.get(position));
+  var imageUrl = $slideItem.attr('data-image-url');
+  this.emit('redo', imageUrl, this);
+
+  $slideItem.remove();
+  this.$slideItems = this.$slideInner.find('.slide-item');
+
+  if (!this.$slideItems.length) {
+    this.$theaterMain.addClass('empty');
+    return;
+  }
+
+  // if there's anything left, select item to the
+  // left or right
+  if (position > 0) {
+    this.selectSlideItem(position - 1);
+  } else {
+    // the item to the right is now at the old position
+    this.selectSlideItem(position);
+  }
 };
 
 module.exports = Gallery;

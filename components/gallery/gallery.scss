@@ -77,6 +77,46 @@
 
         height: 520px;
 
+        > .empty-tag {
+          color: white;
+          pointer-events: none;
+          position: absolute;
+          top: 200px;
+          left: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          width: 100%;
+          text-align: center;
+          opacity: 0;
+          transform: translate(0, -50px);
+          transition: transform 0.4s $out-bounce-bezier, opacity 0.2s ease-out;
+
+          > span {
+            font-weight: 300;
+            font-size: 18px;
+          }
+        }
+
+        &.empty {
+          > .empty-tag {
+            pointer-events: initial;
+            opacity: 1;
+            transform: translate(0, 0);
+          }
+
+          > .image {
+            display: none;
+          }
+
+          &:hover {
+            > button.redo {
+              opacity: 0;
+            }
+          }
+        }
+
         > .image {
           width: 520px;
           height: 520px;
@@ -165,6 +205,7 @@
             display: flex;
             align-items: center;
             transition: transform 0.4s $out-bounce-bezier;
+            height: 70px;
 
             > .slide-item {
               cursor: pointer;

@@ -10,6 +10,7 @@ _.each(hbsHelpers, function(fn, name) {
   Handlebars.registerHelper(name, fn);
 });
 
+TemplateRenderer.registerTemplate('camera-icon/camera-icon', require('../components/camera-icon/camera-icon.hbs'));
 TemplateRenderer.registerTemplate('close/close', require('../components/close/close.hbs'));
 TemplateRenderer.registerTemplate('lightbox/lightbox', require('../components/lightbox/lightbox.hbs'));
 TemplateRenderer.registerTemplate('gallery/gallery', require('../components/gallery/gallery.hbs'));

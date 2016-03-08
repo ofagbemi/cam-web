@@ -1,4 +1,6 @@
 var _ = require('underscore');
+var EventEmitter = require('events').EventEmitter;
+var inherits = require('inherits');
 
 var Lightbox = require('../lightbox/lightbox');
 var TemplateRenderer = require('../../client/services/template-renderer');
@@ -7,6 +9,7 @@ var ComponentFactory = require('../../client/services/component-factory');
 function MilestoneBage($el)  {
   this.$el = $el;
 }
+inherits(MilestoneBage, EventEmitter);
 
 MilestoneBage.prototype.init = function() {
   if (this._init) { return; }
