@@ -1,0 +1,19 @@
+[data-component="gallery"] {
+  > .grid {
+    > .grid-item {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      width: 130px;
+      height: 130px;
+      margin: 10px;
+      background: white;
+
+      &.large {
+        width: 280px;
+        height: 280px;
+      }
+    }
+  }
+}

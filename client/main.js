@@ -1,6 +1,8 @@
 var TemplateRenderer = require('./services/template-renderer');
 var ComponentFactory = require('./services/component-factory');
 
+
+TemplateRenderer.registerTemplate('gallery/gallery', require('../components/gallery/gallery.hbs'));
 TemplateRenderer.registerTemplate('badge-menu/badge-menu', require('../components/badge-menu/badge-menu.hbs'));
 TemplateRenderer.registerTemplate('badge/badge', require('../components/badge/badge.hbs'));
 TemplateRenderer.registerTemplate('activity/activity', require('../components/activity/activity.hbs'));
@@ -10,10 +12,12 @@ TemplateRenderer.registerTemplate('add-milestones/add-milestones-row', require('
 
 ComponentFactory.registerComponent('dashboard', require('../views/dashboard/dashboard'));
 
+ComponentFactory.registerComponent('gallery', require('../components/gallery/gallery'));
 ComponentFactory.registerComponent('badge', require('../components/badge/badge'));
 ComponentFactory.registerComponent('badge-menu', require('../components/badge-menu/badge-menu'));
 ComponentFactory.registerComponent('text-box', require('../components/text-box/text-box'));
 ComponentFactory.registerComponent('mission-card', require('../components/mission-card/mission-card'));
+ComponentFactory.registerComponent('completed-mission-badge', require('../components/completed-mission-badge/completed-mission-badge'));
 ComponentFactory.registerComponent('progress-bar', require('../components/progress-bar/progress-bar'));
 
 ComponentFactory.registerComponent('add-milestones', require('../components/add-milestones/add-milestones'));

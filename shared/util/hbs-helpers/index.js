@@ -1,4 +1,4 @@
-module.exports.valueAt = function(key, object) {
+exports.valueAt = function(key, object) {
   if (object && (key !== undefined)) {
     return object[key];
   }

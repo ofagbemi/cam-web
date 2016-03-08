@@ -1,0 +1,8 @@
+<div data-component="gallery">
+
+  <div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 150 }'>
+    {{#each images}}
+    <div class="grid-item{{#if main}} large{{/if}}" style="background-image: url('{{imageUrl}}');"></div>
+    {{/each}}
+  </div>
+</div>
