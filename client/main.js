@@ -1,6 +1,14 @@
+var _ = require('underscore');
+var Handlebars = require('hbsfy/runtime');
+
 var TemplateRenderer = require('./services/template-renderer');
 var ComponentFactory = require('./services/component-factory');
 
+
+var hbsHelpers = require('../shared/util/hbs-helpers');
+_.each(hbsHelpers, function(fn, name) {
+  Handlebars.registerHelper(name, fn);
+});
 
 TemplateRenderer.registerTemplate('gallery/gallery', require('../components/gallery/gallery.hbs'));
 TemplateRenderer.registerTemplate('badge-menu/badge-menu', require('../components/badge-menu/badge-menu.hbs'));

@@ -2,7 +2,26 @@
 
   <div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 150 }'>
     {{#each images}}
-    <div class="grid-item{{#if main}} large{{/if}}" style="background-image: url('{{imageUrl}}');"></div>
+    <div class="grid-item{{#if main}} large{{/if}}" data-image-url="{{ imageUrl }}" style="background-image: url('{{imageUrl}}');"></div>
     {{/each}}
   </div>
+
+  <section class="theater">
+    <div class="main">
+    </div>
+    <div class="slide">
+
+      <div class="slide-inner">
+        {{#each images}}
+        <div class="slide-item" data-image-url="{{ imageUrl }}" style="background-image:url('{{ imageUrl }}');"></div>
+        {{/each}}
+      </div>
+      <button class="back"></button>
+      <button class="forward"></button>
+    </div>
+  </section>
+
+  <script type="application/json" class="data">
+    {{{json this}}}
+  </script>
 </div>
