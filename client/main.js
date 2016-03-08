@@ -10,6 +10,8 @@ _.each(hbsHelpers, function(fn, name) {
   Handlebars.registerHelper(name, fn);
 });
 
+TemplateRenderer.registerTemplate('close/close', require('../components/close/close.hbs'));
+TemplateRenderer.registerTemplate('lightbox/lightbox', require('../components/lightbox/lightbox.hbs'));
 TemplateRenderer.registerTemplate('gallery/gallery', require('../components/gallery/gallery.hbs'));
 TemplateRenderer.registerTemplate('badge-menu/badge-menu', require('../components/badge-menu/badge-menu.hbs'));
 TemplateRenderer.registerTemplate('badge/badge', require('../components/badge/badge.hbs'));

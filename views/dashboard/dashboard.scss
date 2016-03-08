@@ -39,6 +39,10 @@
           pointer-events: initial;
           transform: translate(0, 0) scale(1);
           transition: transform 0.4s $out-bounce-bezier, opacity 0.2s ease-out;
+
+          &:hover {
+            transform: translate(0, 0) scale(1.05);
+          }
         }
 
         > #active-missions {

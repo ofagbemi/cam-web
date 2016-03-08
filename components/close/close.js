@@ -22,6 +22,7 @@ Close.prototype.init = function() {
 
 Close.prototype._handleClick = function() {
   this.emit('close', this);
+  this.$el.tooltip('hide');
 };
 
 module.exports = Close;

@@ -1,7 +1,9 @@
 [data-component="close"] {
   width: 25px;
   height: 25px;
-
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;

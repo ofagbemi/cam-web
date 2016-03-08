@@ -34,6 +34,9 @@ Gallery.prototype.init = function() {
   this.$grid.on('click', '.grid-item', _.bind(this._handleGridItemClick, this));
 
   this.masonry();
+
+  // click the first slide item
+  $(this.$slideInner.find('.slide-item').get(0)).click();
 };
 
 Gallery.prototype.masonry = function() {

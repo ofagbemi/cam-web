@@ -9,6 +9,12 @@
     border-radius: 180px;
     box-shadow: 0 2px 4px 0 $shadow-color;
     border: solid 10px white;
+    transition: transform 0.2s $out-bounce-bezier;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.15);
+    }
 
 
     > [data-component="user-badge"], > button.extra-users {
