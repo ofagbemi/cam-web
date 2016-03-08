@@ -94,6 +94,7 @@
           transition: transform 0.4s $out-bounce-bezier, opacity 0.2s ease-out;
 
           > span {
+            margin-top: 18px;
             font-weight: 300;
             font-size: 18px;
           }
@@ -113,6 +114,7 @@
           &:hover {
             > button.redo {
               opacity: 0;
+              pointer-events: none;
             }
           }
         }
