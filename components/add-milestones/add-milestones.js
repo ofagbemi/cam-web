@@ -105,8 +105,14 @@ AddMilestones.prototype._addMilestoneComponent = function(data) {
   _.defaults(data, {placeholder: 'Add a milestone'});
 
   var existingActiveRow = _.find(this.activeMilestoneRows, function(row) {
-    return _.isEqual(row.data, data);
+    // should be an id check, but w/e
+    return row.data && data && (row.data.title === data.title);
   });
+
+  if (existingActiveRow) {
+    existingActiveRow.setTimesCompleted(existingActiveRow.getTimesCompleted() - 1);
+    existingActiveRow.setTimesRemaining(existingActiveRow.getTimesRemaining() - 1);
+  }
 
   if (!existingActiveRow) {
     var $addMilestone = TemplateRenderer

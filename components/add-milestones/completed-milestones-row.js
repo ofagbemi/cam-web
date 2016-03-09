@@ -25,6 +25,7 @@ CompletedMilestonesRow.prototype._handleShowGallery = function(galleryComponent)
 };
 
 CompletedMilestonesRow.prototype._handleRedo = function(imageUrl) {
+  console.log('handling redo,s tarts with ' + this.data.timesCompleted);
   this.setTimesCompleted(this.getTimesCompleted() - 1)
   this.setTimesRemaining(this.getTimesRemaining() + 1)
   this.emit('redo', imageUrl, this);
