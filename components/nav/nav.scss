@@ -22,7 +22,8 @@
     pointer-events: none;
   }
 
-   > h1.title {
+  > h1.title {
+    cursor: pointer;
     font-size: 28px;
     font-weight: 700;
     color: $action-color;

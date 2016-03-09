@@ -31,7 +31,6 @@ Dashboard.prototype._handleCompletedClick = function() {
   var $activeButton = this.$buttonGroup.find('.active');
   if ($activeButton.get(0) === this.$completedMissionsButton.get(0)) { return; }
 
-  console.log(this.navComponent);
   this.navComponent.activateAgent();
 
   $activeButton.removeClass('active');
