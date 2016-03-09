@@ -11,7 +11,10 @@
       </div>
       {{> progress-bar/progress-bar this}}
       <div class="milestone-badges">
-        {{#each milestones}}
+        {{#each milestones.active}}
+        {{> milestone-badge/milestone-badge}}
+        {{/each}}
+        {{#each milestones.completed}}
         {{> milestone-badge/milestone-badge}}
         {{/each}}
       </div>
