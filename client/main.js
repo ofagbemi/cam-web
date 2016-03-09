@@ -10,6 +10,9 @@ _.each(hbsHelpers, function(fn, name) {
   Handlebars.registerHelper(name, fn);
 });
 
+TemplateRenderer.registerTemplate('checkmark/checkmark', require('../components/checkmark/checkmark.hbs'));
+TemplateRenderer.registerTemplate('user-badge/user-badge', require('../components/user-badge/user-badge.hbs'));
+TemplateRenderer.registerTemplate('family-list/family-list', require('../components/family-list/family-list.hbs'));
 TemplateRenderer.registerTemplate('camera-icon/camera-icon', require('../components/camera-icon/camera-icon.hbs'));
 TemplateRenderer.registerTemplate('close/close', require('../components/close/close.hbs'));
 TemplateRenderer.registerTemplate('lightbox/lightbox', require('../components/lightbox/lightbox.hbs'));

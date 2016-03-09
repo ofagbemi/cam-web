@@ -3,10 +3,10 @@
   {{#xif assignedTo.length '===' 1}}
   {{!-- Get the color of the single user --}}
   {{#with (valueAt (valueAt 0 assignedTo) family)}}
-  <div class="badge" style="border-color:{{ color }};">
+  <div class="badge" style="border-color:{{ color }};background-image:url('{{../mainImageUrl}}');">
   {{/with}}
   {{ else }}
-  <div class="badge">
+  <div class="badge" style="background-image:url('{{mainImageUrl}}')">
   {{/xif}}
 
     {{#each assignedTo}}
@@ -19,7 +19,7 @@
     {{/xif}}
 
     {{#xif @index '===' 3}}
-    <button class="extra-users">...</button>
+    <button class="more"></button>
     {{/xif}}
     {{/with}}
 

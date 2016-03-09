@@ -26,9 +26,10 @@
     </section>
     <section class="completed-missions">
       <div class="mission-badges">
-        {{#each missions.completed}}
+        {{!-- flex reversed for popovers --}}
+        {{#eachReverse missions.completed}}
         {{> completed-mission-badge/completed-mission-badge this family=../users}}
-        {{/each}}
+        {{/eachReverse}}
       </div>
     </section>
   </div>

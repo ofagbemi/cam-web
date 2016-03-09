@@ -65,6 +65,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        flex-direction: row-reverse;
 
         [data-component="completed-mission-badge"] {
           margin: 28px;

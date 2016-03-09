@@ -593,7 +593,7 @@
           3
         ],
         "badge": "mountain",
-        "main": "/images/demo/milestones/camp/fish.jpg",
+        "mainImageUrl": "/images/demo/milestones/camp/fish.jpg",
         "milestones": {
           "active": [],
           "completed": [
@@ -678,7 +678,7 @@
           2
         ],
         "badge": "silly",
-        "main": "/images/demo/milestones/prank/main.jpg",
+        "mainImageUrl": "/images/demo/milestones/prank/main.jpg",
         "milestones": {
           "active": [],
           "completed": [
@@ -739,7 +739,7 @@
           1
         ],
         "badge": "paw",
-        "main": "/images/demo/milestones/pasta/main.jpg",
+        "mainImageUrl": "/images/demo/milestones/pasta/main.jpg",
         "milestones": {
           "active": [],
           "completed": [
@@ -811,7 +811,7 @@
           3
         ],
         "badge": "flag",
-        "main": "/images/demo/milestones/game/main.jpg",
+        "mainImageUrl": "/images/demo/milestones/game/main.jpg",
         "milestones": {
           "active": [],
           "completed": [
@@ -880,7 +880,7 @@
           2
         ],
         "badge": "plane",
-        "main": "/images/demo/milestones/spy/main.jpg",
+        "mainImageUrl": "/images/demo/milestones/spy/main.jpg",
         "milestones": {
           "active": [],
           "completed": [
@@ -928,7 +928,7 @@
           2
         ],
         "badge": "bolt",
-        "main": "/images/demo/milestones/fair/main.jpg",
+        "mainImageUrl": "/images/demo/milestones/fair/main.jpg",
         "milestones": {
           "active": [],
           "completed": [
@@ -978,7 +978,7 @@
           2
         ],
         "badge": "key",
-        "main": "/images/demo/milestones/music/main.jpg",
+        "mainImageUrl": "/images/demo/milestones/music/main.jpg",
         "milestones": {
           "active": [],
           "completed": [
@@ -1018,7 +1018,7 @@
           2
         ],
         "badge": "rocket",
-        "main": "/images/demo/milestones/business/main.jpg",
+        "mainImageUrl": "/images/demo/milestones/business/main.jpg",
         "milestones": {
           "active": [],
           "completed": [

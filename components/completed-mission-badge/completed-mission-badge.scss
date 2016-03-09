@@ -12,6 +12,10 @@
     transition: transform 0.2s $out-bounce-bezier;
     cursor: pointer;
 
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
     &:hover {
       transform: scale(1.15);
     }
@@ -41,7 +45,7 @@
       }
     }
 
-    > button.extra-users {
+    > button.more {
       position: absolute;
       top: -20px;
       right: -20px;
@@ -50,6 +54,25 @@
       border-radius: 60px;
       background-color: white;
       border: none;
+
+      background-image: url('/images/icons/more/more.svg');
+      background-size: cover;
+      background-position: top;
+      background-repeat: no-repeat;
+      box-shadow: 0 2px 4px $shadow-color;
+      transform: scale(1);
+      cursor: pointer;
+      transition: transform 0.2s $out-bounce-bezier, background-position 0.4s $out-bounce-bezier, background-color 0.2s ease-out;
+
+      &.active {
+        background-color: $action-color;
+        background-position: bottom;
+        outline: none;
+      }
+
+      &:hover:not(.active) {
+        transform: scale(1.15);
+      }
     }
   }
 
