@@ -6,21 +6,24 @@ var ServerData = require('../../client/services/server-data');
 function ProgressBar($el) {
   this.$el = $el;
   this.$track = this.$el.find('.track');
-  this.mission = JSON.parse(this.$el.find('#mission-data').html());
+  this.data = JSON.parse(this.$el.find('script.data').remove().html());
 }
 
 ProgressBar.prototype.init = function() {
-  var milestones = this.mission.milestones;
 
-  var numMilestonesCompleted = 0;
-  var numMilestones = 0;
+  if (!this.data.milestones) { return; }
+
+  var activeMilestones = this.data.milestones.active;
+  var completedMilestones = this.data.milestones.completed;
+
+  var numMilestoneSteps = 0;
   var userTotals = {};
-  _.each(milestones, function(milestone) {
-    _.each(milestone.userIds, function(userId) {
+  _.each(completedMilestones.concat(activeMilestones), function(m) {
+    _.each(m.userIds, function(userId) {
       var ent = userTotals[userId];
       userTotals[userId] = ent ? ent + 1 : 1;
     });
-    numMilestones += (milestone.timesCompleted + milestone.timesRemaining);
+    numMilestoneSteps += (m.timesCompleted + m.timesRemaining);
   });
 
   var bars = [];
@@ -28,12 +31,12 @@ ProgressBar.prototype.init = function() {
     var familyMember = ServerData.getFamilyMemberWithId(key);
     var $barEl = $('<div>').addClass('inner')
       .css({
-        width: (value * 100 / numMilestones) + '%',
+        width: (value * 100 / numMilestoneSteps) + '%',
         backgroundColor: familyMember.color
       }).attr({
         "data-toggle": "tooltip",
         "data-placement": "bottom",
-        "data-title": familyMember.name
+        "data-title": 'Agent ' + familyMember.name
       });
     bars.push($barEl)
   });
@@ -48,7 +51,6 @@ ProgressBar.prototype.init = function() {
       $b.tooltip();
     });
   }, this));
-
 };
 
 module.exports = ProgressBar;
