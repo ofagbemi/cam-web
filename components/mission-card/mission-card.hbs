@@ -1,6 +1,6 @@
 <div data-component="mission-card" class="{{ class }}">
 
-  {{> close/close}}
+  {{> close/close tooltipTitle='Delete'}}
 
   <div class="header">
     {{> badge/badge popover=true badge=badge}}
@@ -55,4 +55,8 @@
       <button class="active save">Save</button>
     </div>
   </div>
+
+  <script type="application/json" class="data">
+    {{{json this}}}
+  </script>
 </div>

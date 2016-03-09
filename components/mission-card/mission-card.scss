@@ -11,6 +11,11 @@
   transition: transform 0.2s $out-bounce-bezier, border-color 0.2s ease-out;
 
 
+  &.delete {
+    opacity: 0 !important;
+    transform: scale(0) !important;
+  }
+
   &:hover:not(.active) {
     transform: scale(1.05);
     border-color: $action-color;

@@ -8,6 +8,11 @@ function MissionCard($el) {
 }
 
 MissionCard.prototype.init = function() {
+
+  if (this._init) { return; }
+  this._init = true;
+
+  this.data = JSON.parse(this.$el.find('script.data').remove().html());
   this.titleComponent = ComponentFactory.getComponent(this.$el.find('[data-component="text-box"].title'));
   this.closeComponent = ComponentFactory.getComponent(this.$el.find('[data-component="close"]'));
   this.addMilestonesComponent = ComponentFactory.getComponent(this.$el.find('[data-component="add-milestones"]'));
@@ -17,7 +22,7 @@ MissionCard.prototype.init = function() {
     this.userBadgeComponents.push(ComponentFactory.getComponent(el));
   }, this));
 
-  this.closeComponent.on('close', _.bind(this._handleClose, this));
+  this.closeComponent.on('close', _.bind(this._handleDelete, this));
 
   this.badgeComponent = ComponentFactory.getComponent(this.$el.find('> .header > [data-component="badge"]'));
 
@@ -47,10 +52,6 @@ MissionCard.prototype._handleSave = function() {
 };
 
 MissionCard.prototype._handleCancel = function() {
-  this._handleClose();
-};
-
-MissionCard.prototype._handleClose = function() {
   // step past the event loop -- click events trigger
   // _handleClick
   setTimeout(_.bind(function() {
@@ -58,6 +59,15 @@ MissionCard.prototype._handleClose = function() {
     this.badgeComponent.setEditable(false);
     this.clear();
   }, this));
+};
+
+MissionCard.prototype._handleDelete = function() {
+  if (confirm('Are you sure you want to delete “' + this.data.title + '”?')) {
+    this.$el.addClass('delete');
+    setTimeout(_.bind(function() {
+      this.$el.remove();
+    }, this), 600);
+  }
 };
 
 MissionCard.prototype.clear = function() {
