@@ -12,6 +12,31 @@
   align-items: center;
   justify-content: flex-end;
 
+  > [data-component="agent"] {
+    margin-left: -40px;
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    transition: margin-left 0.4s $out-bounce-bezier, opacity 0.2s ease-out;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+   > h1.title {
+    font-size: 28px;
+    font-weight: 700;
+    color: $action-color;
+    margin-left: 18px;
+    margin-right: auto;
+  }
+
+  &.activate-agent {
+    > [data-component="agent"] {
+      margin-left: 18px;
+      opacity: 1;
+    }
+  }
+
   .buttons {
     position: relative;
     margin-right: 20px;

@@ -100,4 +100,12 @@ Nav.prototype._renderActivityTemplate = function() {
   });
 };
 
+Nav.prototype.activateAgent = function() {
+  this.$el.addClass('activate-agent');
+};
+
+Nav.prototype.deactivateAgent = function() {
+  this.$el.removeClass('activate-agent');
+};
+
 module.exports = Nav;

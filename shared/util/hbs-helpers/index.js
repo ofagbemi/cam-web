@@ -1,3 +1,8 @@
+exports.head = function(options) {
+  this._extend_head = options.fn(this);
+  return null;
+}
+
 /**
  * Taken from http://jsfiddle.net/mpetrovich/wMmHS/
  */

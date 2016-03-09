@@ -1,11 +1,17 @@
 var _ = require('underscore');
 var $ = require('jquery');
 
+var ComponentFactory = require('../../client/services/component-factory');
+
 function Dashboard($el) {
   this.$el = $el;
 }
 
 Dashboard.prototype.init = function() {
+
+  $(document).ready(_.bind(function() {
+    this.navComponent = ComponentFactory.getComponent($('[data-component="nav"]'));
+  }, this));
 
   this.$buttonGroup = this.$el.find('> [data-component="button-group"]');
   this.$activeMissionsButton = this.$el.find('button.active-missions');
@@ -25,6 +31,9 @@ Dashboard.prototype._handleCompletedClick = function() {
   var $activeButton = this.$buttonGroup.find('.active');
   if ($activeButton.get(0) === this.$completedMissionsButton.get(0)) { return; }
 
+  console.log(this.navComponent);
+  this.navComponent.activateAgent();
+
   $activeButton.removeClass('active');
   this.$completedMissionsButton.addClass('active');
   this.$el
@@ -35,6 +44,8 @@ Dashboard.prototype._handleCompletedClick = function() {
 Dashboard.prototype._handleActiveClick = function() {
   var $activeButton = this.$buttonGroup.find('.active');
   if ($activeButton.get(0) === this.$activeMissionsButton.get(0)) { return; }
+
+  this.navComponent.deactivateAgent();
 
   $activeButton.removeClass('active');
   this.$activeMissionsButton.addClass('active');

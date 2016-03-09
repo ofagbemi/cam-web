@@ -15,7 +15,6 @@ BadgeMenu.prototype.init = function() {
 
   var badgeSelector = '> .badges > .badge-wrapper > [data-component="badge"]';
   this.$el.on('click', badgeSelector, _.bind(this._handleSelect, this));
-  console.log(this.$el.get(0));
 };
 
 BadgeMenu.prototype._handleSelect = function(e, badgeMenu) {

@@ -241,6 +241,10 @@
   }
 
   &.create {
+    > [data-component="close"] {
+      display: none;
+    }
+
     > .header {
       > [data-component="badge"] {
         background-image: url('/images/icons/badges/create@3x.png')
