@@ -83,6 +83,10 @@ Badge.prototype._renderBadgeMenuTemplate = function() {
 
 Badge.prototype._handleSelectBadge = function(badge, badgeMenu) {
   this.$el.removeClass(BADGES_CLASSNAME);
+  this.setBadge(badge);
+};
+
+Badge.prototype.setBadge = function(badge) {
   this.$el.addClass(badge);
 };
 

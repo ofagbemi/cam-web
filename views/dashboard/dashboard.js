@@ -20,11 +20,32 @@ Dashboard.prototype.init = function() {
   this.$activeMissionsButton.on('click', _.bind(this._handleActiveClick, this));
   this.$completedMissionsButton.on('click', _.bind(this._handleCompletedClick, this));
 
+
+  this.$missionCardsWrapper = this.$el.find('section.active-missions > .mission-cards');
+  this.$activeMissionsWrapper = this.$el.find('section.active-missions #active-missions');
+
+
+  this.$missionCards = this.$el.find('[data-component="mission-card"]');
+  this.$missionCards.each(_.bind(function(index, el) {
+    this._bindCreateListeners($(el));
+  }, this));
+
   $(document).ready(_.bind(function() {
     setTimeout(_.bind(function() {
       this.$el.removeClass('loading');
     }, this), 4000);
   }, this));
+};
+
+Dashboard.prototype._bindCreateListeners = function($createEl) {
+  var card = ComponentFactory.getComponent($createEl);
+  card.on('save-create', _.bind(this._handleSaveCreate, this));
+};
+
+Dashboard.prototype._handleSaveCreate = function($newCreateEl, cardComponent) {
+  this.$missionCardsWrapper.prepend($newCreateEl);
+  this.$activeMissionsWrapper.prepend(cardComponent.$el);
+  this._bindCreateListeners($newCreateEl);
 };
 
 Dashboard.prototype._handleCompletedClick = function() {

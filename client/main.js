@@ -10,6 +10,9 @@ _.each(hbsHelpers, function(fn, name) {
   Handlebars.registerHelper(name, fn);
 });
 
+TemplateRenderer.registerTemplate('mission-card/mission-card', require('../components/mission-card/mission-card.hbs'));
+TemplateRenderer.registerTemplate('progress-bar/progress-bar', require('../components/progress-bar/progress-bar.hbs'));
+TemplateRenderer.registerTemplate('add-milestones/add-milestones', require('../components/add-milestones/add-milestones.hbs'));
 TemplateRenderer.registerTemplate('checkmark/checkmark', require('../components/checkmark/checkmark.hbs'));
 TemplateRenderer.registerTemplate('user-badge/user-badge', require('../components/user-badge/user-badge.hbs'));
 TemplateRenderer.registerTemplate('family-list/family-list', require('../components/family-list/family-list.hbs'));

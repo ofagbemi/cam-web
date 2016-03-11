@@ -129,7 +129,7 @@ AddMilestones.prototype._addMilestoneComponent = function(data) {
     this.activeMilestoneRows.unshift(rowComponent);
     this._bindActiveRowComponentListeners(rowComponent);
   }
-}
+};
 
 AddMilestones.prototype.clear = function() {
   this.activeMilestoneRows = [];

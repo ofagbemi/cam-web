@@ -24,6 +24,10 @@ TextBox.prototype._emitKeyup = function(e) {
 
 TextBox.prototype.clear = function() {
   this.$input.val('');
-}
+};
+
+TextBox.prototype.getValue = function() {
+  return this.$input.val();
+};
 
 module.exports = TextBox;
