@@ -8,6 +8,7 @@
   </header>
   <div class="content">
     <section class="theater">
+      <h4 class="caption">{{ caption }}</h4>
       <div class="main">
         <div class="empty-tag">
           {{> camera-icon/camera-icon}}
@@ -22,7 +23,7 @@
         <div class="slide-inner-wrap">
           <div class="slide-inner">
             {{#each images}}
-            <div class="slide-item" data-image-url="{{ imageUrl }}" style="background-image:url('{{ imageUrl }}');"></div>
+            <div class="slide-item" {{#if caption}}data-caption="{{caption}}"{{/if}} data-image-url="{{ imageUrl }}" style="background-image:url('{{ imageUrl }}');"></div>
             {{/each}}
           </div>
         </div>

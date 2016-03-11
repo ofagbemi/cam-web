@@ -66,7 +66,8 @@ CompletedMissionBadge.prototype._renderGalleryTemplate = function() {
     _.each(milestone.imageUrls, function(url) {
       images.push({
         imageUrl: url,
-        main: (that.data.main === url)
+        main: (that.data.main === url),
+        caption: milestone.title
       });
     });
   });

@@ -70,6 +70,25 @@
       transform: translate(0, 40px);
       pointer-events: none;
 
+      > h4.caption {
+        color: white;
+        margin-bottom: 18px;
+        text-align: center;
+        font-size: 24px;
+        transform: translate(0, 20px);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.4s $out-bounce-bezier, opacity ease-out;
+      }
+
+      &:hover {
+        > h4.caption {
+          transform: translate(0, 0);
+          opacity: 1;
+          pointer-events: initial;
+        }
+      }
+
       > .main {
         display: flex;
         justify-content: center;

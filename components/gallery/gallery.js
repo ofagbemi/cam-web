@@ -20,11 +20,16 @@ Gallery.prototype.init = function() {
 
   this.data = JSON.parse(this.$el.find('script.data').remove().html());
 
+
+
   this._position = 0;
   this._translatePixels = 0;
 
   this.$theater = this.$el.find('.theater');
   this.$theaterMain = this.$theater.find('.main');
+
+
+  this.$caption = this.$theater.find('> h4.caption');
 
   this.$slide = this.$theater.find('.slide');
   this.$slideInner = this.$slide.find('> .slide-inner-wrap > .slide-inner');
@@ -87,7 +92,8 @@ Gallery.prototype._handleSlideItemClick = function(e) {
   $slideItem.addClass('selected');
 
   var imageUrl = $slideItem.attr('data-image-url');
-  this._setMainTheaterImage(imageUrl);
+  var caption = $slideItem.attr('data-caption');
+  this._setMainTheaterImage(imageUrl, caption);
 
   this._position = $slideItem.index();
 
@@ -110,14 +116,20 @@ Gallery.prototype._handleSlideItemClick = function(e) {
   }
 };
 
-Gallery.prototype._setMainTheaterImage = function(imageUrl) {
+Gallery.prototype._setMainTheaterImage = function(imageUrl, caption) {
   this.$theaterMain.find('> .image').css('background-image', 'url(\'' + imageUrl + '\')');
+  if (caption) {
+    this.$caption.text(caption);
+  } else {
+    this.$caption.html('');
+  }
 };
 
 Gallery.prototype._clearMainTheaterImage = function() {
+  this.$caption.html('');
   this.$theaterMain.find('> .image').css('background-image', 'none');
   this.$theaterMain.addClass('empty');
-}
+};
 
 Gallery.prototype._translateTo = function(position) {
   if (this._transitioning) { return; }
@@ -150,7 +162,7 @@ Gallery.prototype._handleRedo = function() {
   this.$slideItems = this.$slideInner.find('.slide-item');
 
   if (!this.$slideItems.length) {
-    this.$theaterMain.addClass('empty');
+    this._clearMainTheaterImage();
     return;
   }
 
